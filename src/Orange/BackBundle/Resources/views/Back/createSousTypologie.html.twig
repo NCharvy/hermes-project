@@ -1,0 +1,55 @@
+{% extends "OrangeCoreBundle::base.html.twig" %}
+
+{% block title %}Admin - DCR{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="starter-template">
+            <h2>Création de sous-typologie</h2>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                	<div class="row">
+	                    <div class="col-md-3">
+	                        <a class="btn btn-primary" href="{{ path('_soustypologie') }}" role="button" style="margin-bottom: 20px;"><i class="icon-circle-arrow-left"></i> Retour</a>
+	                    </div>
+	                </div>
+	                <div class="panel panel-default">
+	                    <div class="panel-heading">
+	                        <h2 style="text-align : center;">Création de sous-typologie</h2>
+	                    </div>
+	                    <div class="panel-body">
+	                        <div class="col-md-10 col-md-offset-1">
+	                            {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+	                            {{ form_errors(form) }}
+	                            <div class="form-group">
+	                                {{ form_label(form.libelle, "Libellé", {'label_attr': {'class': 'col-sm-5 control-label'}}) }}
+	                                {{ form_errors(form.libelle) }}
+	                                <div class="col-sm-6">
+	                                    {{ form_widget(form.libelle, {'attr': {'class': 'form-control'}}) }}
+	                                </div>
+	                            </div>
+
+	                            <div class="form-group">
+	                                {{ form_label(form.typologie, "Typologie", {'label_attr': {'class': 'col-sm-5 control-label'}}) }}
+	                                {{ form_errors(form.typologie) }}
+	                                <div class="col-sm-6">
+	                                    {{ form_widget(form.typologie, {'attr': {'class': 'form-control'}}) }}
+	                                </div>
+	                            </div>
+
+	                            <div class="col-md-3 col-md-offset-8">
+	                                {{ form_widget(form.enregistrer, {'attr': {'class': 'btn btn-primary'}}) }}
+	                            </div>
+	                            {{ form_rest(form) }} {# Génération automatique de champs pas encore écrits, comme ceux générés automatiquement par Symfony #}
+	                            {{ form_end(form) }}
+	                        </div>
+	                    </div>
+	                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+	{% extends "OrangeCoreBundle::foot.html.twig" %}
+{% endblock %}

@@ -1,0 +1,34 @@
+orange_security:
+    resource: "@OrangeSecurityBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+orange_back:
+    resource: "@OrangeBackBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+orange_core:
+    resource: "@OrangeCoreBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+orange_home:
+    resource: "@OrangeHomeBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+login:
+    pattern:  /back/login
+    defaults: { _controller: OrangeSecurityBundle:Security:login }
+
+login_check:
+    pattern: /back/login_check
+
+logout:
+    pattern: /back/logout
+    defaults: { _controller: OrangeSecurityBundle:Security:logout }

@@ -1,0 +1,159 @@
+<?php
+
+namespace Orange\HomeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Classification
+ *
+ * @ORM\Table(name="dbdevco_classification")
+ * @ORM\Entity(repositoryClass="Orange\HomeBundle\Repository\ClassificationRepository")
+ */
+class Classification
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="libelle", type="string", length=255)
+     */
+    private $libelle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="route", type="string", length=255)
+     */
+    private $route;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="visuel", type="string", length=255)
+     */
+    private $visuel;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Orange\HomeBundle\Entity\Typologie", mappedBy="classification")
+     * @ORM\JoinColumn(referencedColumnName="id", nullable=true)
+     */
+    private $typologies;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set libelle
+     *
+     * @param string $libelle
+     * @return Classification
+     */
+    public function setLibelle($libelle)
+    {
+        $this->libelle = $libelle;
+
+        return $this;
+    }
+
+    /**
+     * Get libelle
+     *
+     * @return string 
+     */
+    public function getLibelle()
+    {
+        return $this->libelle;
+    }
+
+    /**
+     * Set route
+     *
+     * @param string $route
+     * @return Classification
+     */
+    public function setRoute($route)
+    {
+        $this->route = $route;
+
+        return $this;
+    }
+
+    /**
+     * Get route
+     *
+     * @return string 
+     */
+    public function getRoute()
+    {
+        return $this->route;
+    }
+
+    /**
+     * Set visuel
+     *
+     * @param string $visuel
+     * @return Classification
+     */
+    public function setVisuel($visuel)
+    {
+        $this->visuel = $visuel;
+
+        return $this;
+    }
+
+    /**
+     * Get visuel
+     *
+     * @return string 
+     */
+    public function getVisuel()
+    {
+        return $this->visuel;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Classification
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+}

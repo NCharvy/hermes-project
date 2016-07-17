@@ -1,0 +1,45 @@
+{% extends "OrangeCoreBundle::base.html.twig" %}
+
+{% block title %}Admin - DCR{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="starter-template">
+            <h2>Sous-typologies</h2>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                	<div class="row">
+                        <div class="col-md-3">
+                            <a class="btn btn-primary" href="{{ path('_back') }}" role="button" style="margin-left: 12px;"><i class="icon-circle-arrow-left"></i> Retour</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-md-offset-9">
+                            <a href="{{ path('_soustypologie_create') }}" class="btn btn-default" style="margin-bottom: 20px;"><i class="icon-plus-sign-alt"></i> Nouvelle sous-typologie</a>
+                        </div>
+                    </div>
+                    <table id="cat_table" class="table table-hover table-bordered table-stripped">
+                        <thead>
+                        <tr>
+                            <th>Identifiant</th>
+                            <th>Libellé</th>
+                            <th>Route</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for st in stypo %}
+                            <tr>
+                                <td>{{ st.id }}</td>
+                                <td>{{ st.libelle }}</td>
+                                <td>{{ st.route }}</td>
+                                <td><a href="{{ path('_soustypologie_update', {'id': st.id}) }}"><i class="icon-pencil"></i></a> <a href="{{ path('_soustypologie_delete', {'id': st.id}) }}"><i class="icon-trash"></i></a></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "OrangeCoreBundle::base.html.twig" %}
+
+{% block title %}Base de données - DCR{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="starter-template">
+            <h1>DCR / DevCo Normandie-Centre</h1>
+            <h2>Base de données commerciale 2016</h2>
+            <div class="row">
+                {% for c in classifications %}
+                <div class="col-md-4" {% if c.visuel is defined %}style="background: url(/upload/visuels/{{ c.visuel }});"{% endif %}>
+                    <h2>{{ c.libelle }}, <br /> {{ c.description }}</h2>
+                    <ul class="list-group">
+                    {% for t in c.typologies %}
+                        {% if t.sublevel == false %}
+                        <li class="list-group-item"><a href="{{ path('_show_files', {'id': t.id}) }}">{{ t.libelle }}</a></li>
+                        {% else %}
+                        <li class="list-group-item"><a href="{{ path('_home_flevel', {'route': t.route}) }}">{{ t.libelle }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+    {% include "OrangeCoreBundle::foot.html.twig" %}
+{% endblock %}

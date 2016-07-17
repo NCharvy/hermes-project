@@ -1,0 +1,30 @@
+{% extends "OrangeCoreBundle::base.html.twig" %}
+
+{% block title %}Admin - DCR{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="starter-template">
+            <div class="row">
+                <a href="{{ path('logout') }}" class="btn btn-danger btn-sm">Déconnexion</a>
+            </div>
+            <h1>DCR / DevCo Normandie-Centre</h1>
+            <h2>Administration de la base de données</h2>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 style="text-align : center;">Actions possibles</h2>
+                        </div>
+                        <div class="panel-body" style="text-align : center;">
+                            <a class="btn btn-default" href="{{ path('_classification') }}">Classification</a>
+                            <a class="btn btn-default" href="{{ path('_typologie') }}">Typologie</a>
+                            <a class="btn btn-default" href="{{ path('_soustypologie') }}">Sous-typologie</a>
+                            <a class="btn btn-default" href="{{ path('_fichier') }}">Fichier</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<footer>
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                            <span class="navbar-brand">&copy;
+                                {% set actual = "now"|date('Y') %}
+                                {% if actual == 2016 %}
+                                    {{ actual }}
+                                {% else %}
+                                    2016 - {{ actual }}
+                                {% endif %}
+                                Orange</span>
+                </div>
+                <div class="col-sm-3 col-sm-offset-8 collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="{{ path('_back') }}" class="navbar-brand">Admin</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

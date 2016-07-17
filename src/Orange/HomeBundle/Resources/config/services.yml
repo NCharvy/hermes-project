@@ -1,0 +1,4 @@
+services:
+#    orange_home.example:
+#        class: Orange\HomeBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
