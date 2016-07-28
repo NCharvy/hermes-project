@@ -1,0 +1,93 @@
+{# src //Bundle/Resources/views/layout.html.twig #}
+
+{% extends "OrangeCoreBundle::back-base.html.twig" %}
+{% block body %}
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ path('_home') }}">Retour au site</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{ app.user.username }} <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ path('logout') }}"><i class="fa fa-fw fa-power-off"></i> Déconnexion</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a href="{{ path('_back') }}"><i class="fa fa-fw fa-dashboard"></i> Tableau de bord</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#class"><i class="fa fa-fw fa-rss"></i> Classifications <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="class" class="collapse">
+                            <li>
+                                <a href="{{ path('_classification') }}">Toutes les classifications</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('_classification_create') }}">Créer une classification</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#typo"><i class="fa fa-fw fa-rss"></i> Typologies <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="typo" class="collapse">
+                            <li>
+                                <a href="{{ path('_typologie') }}">Toutes les typologies</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('_typologie_create') }}">Créer une typologie</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#stypo"><i class="fa fa-fw fa-rss"></i> Sous-typologies <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="stypo" class="collapse">
+                            <li>
+                                <a href="{{ path('_soustypologie') }}">Toutes les sous-typologies</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('_soustypologie_create') }}">Créer une sous-typologie</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#file"><i class="fa fa-fw fa-rss"></i> Fichiers <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="file" class="collapse">
+                            <li>
+                                <a href="{{ path('_fichier') }}">Tous les fichiers</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('_fichier_create') }}">Ajouter un fichier</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+{% endblock %}

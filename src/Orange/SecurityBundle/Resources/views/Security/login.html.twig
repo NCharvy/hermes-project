@@ -1,4 +1,4 @@
-{% extends "OrangeCoreBundle::base.html.twig" %}
+{% extends "OrangeCoreBundle::login-base.html.twig" %}
 
 {% block title %}Login | Orange budget{% endblock %}
 
@@ -39,7 +39,13 @@
                     </div>
                 </form>
             </div>
-            <div class="col-md-3"></div>
+            <div class="col-md-3">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <a href="{{ path('_home') }}">Retour au site</a>
+            </div>
         </div>
     </section>
 {% endblock %}

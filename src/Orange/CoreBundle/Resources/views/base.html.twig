@@ -22,8 +22,17 @@
 </head>
 <body>
 <div class="content-wrapper">
-    {% block content %}
-    {% endblock %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2" id="logo-front">
+                <a href="{{ path('_home') }}">
+                    <img src="{{ asset('bundles/orangecore/img/orange-logo.png') }}" width="100"/>
+                </a>
+            </div>
+        </div>
+        {% block content %}
+        {% endblock %}
+    </div>
     {% block footer %}
     {% endblock %}
 </div>

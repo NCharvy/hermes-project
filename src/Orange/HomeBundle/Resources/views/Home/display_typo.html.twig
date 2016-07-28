@@ -5,17 +5,19 @@
 {% block content %}
     <div class="container">
         <div class="starter-template">
-            <h1>Dossiers de {{ t.libelle }}</h1>
             <div class="row">
-                <div class="col-md-3">
-                    <a class="btn btn-primary" href="{{ path('_home') }}" role="button" style="margin-bottom: 20px;"><i class="icon-circle-arrow-left"></i> Retour</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <ul>
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="row">
+                        <div class="col-md-3" style="margin-left : -4%;">
+                            <a class="btn btn-primary" style="font-size : 1.2em; margin-bottom : 15px;" href="{{ path('_home') }}" role="button" style="margin-bottom: 20px;"><i class="icon-circle-arrow-left"></i> Retour</a>
+                        </div>
+                    </div>
+                    <div class="heading-typo">
+                        <h1>Dossiers de {{ t.libelle }}</h1>
+                    </div>
+                    <ul class="list-group typologie">
                         {% for st in stypos %}
-                            <li><a href="{{ path('_show_sfiles', {'id': st.id}) }}">{{ st.libelle }}</a></li>
+                            <li class="list-group-item"><a href="{{ path('_show_sfiles', {'id': st.id}) }}">{{ st.libelle }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>

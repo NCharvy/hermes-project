@@ -1,0 +1,18 @@
+/** Custom **/
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('/bundles/orangecore/fonts/helvetica-neue/helvetica-neue.eot');
+    src: url('/bundles/orangecore/fonts/helvetica-neue/helvetica-neue.eot') format('embedded-opentype'),
+    url('/bundles/orangecore/fonts/helvetica-neue/helvetica-neue.woff') format('woff'),
+    url('/bundles/orangecore/fonts/helvetica-neue/helvetica-neue.ttf') format('truetype'),
+    url('/bundles/orangecore/fonts/helvetica-neue/helvetica-neue.svg#HelveticaNeueRegular') format('svg');
+}
+
+body {
+    padding-top: 50px;
+    font-family : 'Helvetica Neue', sans-serif;
+}
+.starter-template {
+    text-align: center;
+}

@@ -1,0 +1,128 @@
+{% extends "OrangeCoreBundle::layout.html.twig" %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link href="{{ asset('/c3-0.4.10/c3.min.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-xs-offset-0 col-sm-offset-2">
+        <h2>{{ 'statistics'|trans }}</h2>
+
+        <div class="row">
+            <h3>{{ 'kind_flows.title'|trans }}</h3>
+            <div id="chart_kind_flows"></div>
+        </div>
+
+        <div class="row">
+            <h3>{{ 'country_stats'|trans }}</h3>
+
+            <div class="col-xs-12 col-sm-6">
+                <h4>{{ 'country_title.flows'|trans }}</h4>
+                <div id="chart_country_flows"></div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+                <h4>{{ 'country_title.wines'|trans }}</h4>
+                <div id='chart_country_wines'></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3>{{ 'region_stats'|trans }}</h3>
+            <div class="form-group">
+                <label for="country">{{ 'Choose_country'|trans }}</label>
+                <select class="form-control selectpicker" name="country" id="country-list" placeholder="Pays" onChange="statRegion(this.value);">
+                    {% for state in states %}
+                        <option value="{{ state.id }}">{{ state.nom }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+                <h4>{{ 'region_title.flows'|trans }}</h4>
+                <div id="chart_region_flows"></div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+                <h4>{{ 'region_title.wines'|trans }}</h4>
+                <div id='chart_region_wines'></div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('/d3-master/d3.min.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/c3-0.4.10/c3.min.js') }}"></script>
+
+    <script type="text/javascript">
+        var chart_kind_flows = c3.generate({
+            bindto: '#chart_kind_flows',
+            data: {
+                columns: [
+                    ["{{ 'kind_flows.valid'|trans }}", {{ stats_flows['valid'] }}],
+                    ["{{ 'kind_flows.not_found'|trans }}", {{ stats_flows['not_found'] }}],
+                    ["{{ 'kind_flows.invalid'|trans }}", {{ stats_flows['invalid'] }}],
+                    ["{{ 'kind_flows.error'|trans }}", {{ stats_flows['error'] }}]
+                ],
+                type : 'pie'
+            },
+            pie: {
+                label: {
+                    format: function (value, ratio, id) {
+                        return d3.format('')(value);
+                    }
+                }
+            }
+        });
+
+        var chart_country_flows = c3.generate({
+            bindto: '#chart_country_flows',
+            data: {
+                columns: [
+                    {% set i=0 %}
+                    {% for key_country, data_country in country_flows %}
+                        {% set i = i + 1 %}
+                        ["{{ key_country }}", {{ data_country }}] {% if i < country_flows|length %},{% endif %}
+                    {% endfor %}
+                ],
+                type : 'pie'
+            },
+            pie: {
+                label: {
+                    format: function (value, ratio, id) {
+                        return d3.format('')(value);
+                    }
+                }
+            }
+        });
+
+        var chart_country_flows = c3.generate({
+            bindto: '#chart_country_wines',
+            data: {
+                columns: [
+                    {% set i=0 %}
+                    {% for key_country, data_country in country_wines %}
+                        {% set i = i + 1 %}
+                        ["{{ key_country }}", {{ data_country }}] {% if i < country_flows|length %},{% endif %}
+                    {% endfor %}
+                ],
+                type : 'pie'
+            },
+            pie: {
+                label: {
+                    format: function (value, ratio, id) {
+                        return d3.format('')(value);
+                    }
+                }
+            }
+        });
+    </script>
+    <script src="{{ asset('bundles/admin/js/global.js') }}"></script>
+{% endblock %}

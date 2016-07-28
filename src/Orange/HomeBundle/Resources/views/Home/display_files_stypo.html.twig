@@ -13,11 +13,14 @@
             </div>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <ul>
-                        {% for f in files %}
-                            <li>{{ f.nom }}</li>
-                        {% endfor %}
-                    </ul>
+                    {% for f in files %}
+                        <div class="col-md-4 file-cont">
+                            <div class="panel panel-default col-md-10">
+                                <h3>{{ f.nom }}</h3>
+                                <a target="_blank" href="{{ asset('uploads/resources/' ~ f.lien) }}">Télécharger le fichier</a>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
