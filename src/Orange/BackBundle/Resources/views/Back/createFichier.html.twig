@@ -5,17 +5,11 @@
 {% block content %}
     <div class="container">
         <div class="starter-template">
-            <h2>Création de fichier</h2>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                	<div class="row">
-	                    <div class="col-md-3">
-	                        <a class="btn btn-primary" href="{{ path('_typologie') }}" role="button" style="margin-bottom: 20px;"><i class="icon-circle-arrow-left"></i> Retour</a>
-	                    </div>
-	                </div>
 	                <div class="panel panel-default">
 	                    <div class="panel-heading">
-	                        <h2 style="text-align : center;">Création de fichier</h2>
+	                        <h2 style="text-align : center;">{{ libelle }} de fichier</h2>
 	                    </div>
 	                    <div class="panel-body">
 	                        <div class="col-md-10 col-md-offset-1">
@@ -28,6 +22,14 @@
 	                                    {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
 	                                </div>
 	                            </div>
+
+								<div class="form-group">
+									{{ form_label(form.typologie, "Typologie", {'label_attr': {'class': 'col-sm-5 control-label'}}) }}
+									{{ form_errors(form.typologie) }}
+									<div class="col-sm-6">
+										{{ form_widget(form.typologie, {'attr': {'class': 'form-control'}}) }}
+									</div>
+								</div>
 
 	                            <div class="form-group">
 	                                {{ form_label(form.soustypologie, "Sous-typologie", {'label_attr': {'class': 'col-sm-5 control-label'}}) }}
@@ -57,7 +59,4 @@
             </div>
         </div>
     </div>
-{% endblock %}
-{% block footer %}
-	{% extends "OrangeCoreBundle::foot.html.twig" %}
 {% endblock %}

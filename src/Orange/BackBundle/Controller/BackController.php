@@ -17,6 +17,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Orange\HomeBundle\Form\ClassificationType;
 use Orange\HomeBundle\Form\FichierType;
+use Orange\HomeBundle\Form\FichierUpType;
 use Orange\HomeBundle\Form\TypeType;
 use Orange\HomeBundle\Form\TypologieType;
 use Orange\HomeBundle\Form\SousTypologieType;
@@ -57,6 +58,7 @@ class BackController extends Controller
 
         $class = new Classification;
         $form = $this->get('form.factory')->create(new ClassificationType(), $class);
+        $typeAction = "Création";
 
         if($form->handleRequest($req)->isValid()){
             $em = $this->getDoctrine()->getManager();
@@ -68,7 +70,7 @@ class BackController extends Controller
             return $this->redirectToRoute('_classification');
         }
 
-        return array('form' => $form->createView());
+        return array('form' => $form->createView(), 'libelle' => $typeAction);
     }
 
     /**
@@ -79,6 +81,7 @@ class BackController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $class = $em->getRepository('OrangeHomeBundle:Classification')->find($id);
+        $typeAction = "Modification";
 
         $form = $this->get('form.factory')->create(new ClassificationType(), $class);
 
@@ -91,7 +94,7 @@ class BackController extends Controller
             return $this->redirectToRoute('_classification');
         }
 
-        return array('form' => $form->createView());
+        return array('form' => $form->createView(), 'libelle' => $typeAction);
     }
 
     /**
@@ -133,6 +136,7 @@ class BackController extends Controller
 
         $typo = new Typologie;
         $form = $this->get('form.factory')->create(new TypologieType(), $typo);
+        $typeAction = "Création";
 
         if($form->handleRequest($req)->isValid()){
             $em = $this->getDoctrine()->getManager();
@@ -149,7 +153,7 @@ class BackController extends Controller
             return $this->redirectToRoute('_typologie');
         }
 
-        return array('form' => $form->createView());
+        return array('form' => $form->createView(), 'libelle' => $typeAction);
     }
 
     /**
@@ -160,6 +164,7 @@ class BackController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $typo = $em->getRepository('OrangeHomeBundle:Typologie')->find($id);
+        $typeAction = "Modification";
 
         $form = $this->get('form.factory')->create(new TypologieType(), $typo);
 
@@ -172,7 +177,7 @@ class BackController extends Controller
             return $this->redirectToRoute('_typologie');
         }
 
-        return array('form' => $form->createView());
+        return array('form' => $form->createView(), 'libelle' => $typeAction);
     }
 
     /**
@@ -214,6 +219,7 @@ class BackController extends Controller
 
         $stypo = new SousTypologie;
         $form = $this->get('form.factory')->create(new SousTypologieType(), $stypo);
+        $typeAction = "Création";
 
         if($form->handleRequest($req)->isValid()){
             $em = $this->getDoctrine()->getManager();
@@ -230,17 +236,18 @@ class BackController extends Controller
             return $this->redirectToRoute('_soustypologie');
         }
 
-        return array('form' => $form->createView());
+        return array('form' => $form->createView(), 'libelle' => $typeAction);
     }
 
     /**
      * @Route("/back/soustypologie/update/{id}", name="_soustypologie_update")
-     * @Template("OrangeHomeBundle:Back:createSousTypologie.html.twig")
+     * @Template("OrangeBackBundle:Back:createSousTypologie.html.twig")
      */
     public function updateSousTypologieAction(Request $req, $id)
     {
         $em = $this->getDoctrine()->getManager();
         $stypo = $em->getRepository('OrangeHomeBundle:SousTypologie')->find($id);
+        $typeAction = "Modification";
 
         $form = $this->get('form.factory')->create(new SousTypologieType(), $stypo);
 
@@ -253,7 +260,7 @@ class BackController extends Controller
             return $this->redirectToRoute('_soustypologie');
         }
 
-        return array('form' => $form->createView());
+        return array('form' => $form->createView(), 'libelle' => $typeAction);
     }
 
     /**
@@ -295,6 +302,7 @@ class BackController extends Controller
 
         $file = new Fichier;
         $form = $this->get('form.factory')->create(new FichierType(), $file);
+        $typeAction = "Création";
 
         if($form->handleRequest($req)->isValid()){
             $em = $this->getDoctrine()->getManager();
@@ -307,7 +315,7 @@ class BackController extends Controller
             return $this->redirectToRoute('_fichier');
         }
 
-        return array('form' => $form->createView());
+        return array('form' => $form->createView(), 'libelle' => $typeAction);
     }
 
     /**
@@ -318,8 +326,9 @@ class BackController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $file = $em->getRepository('OrangeHomeBundle:Fichier')->find($id);
+        $typeAction = "Modification";
 
-        $form = $this->get('form.factory')->create(new FichierType(), $file);
+        $form = $this->get('form.factory')->create(new FichierUpType(), $file);
 
         if($form->handleRequest($req)->isValid()){
             $em->persist($file);
@@ -330,7 +339,7 @@ class BackController extends Controller
             return $this->redirectToRoute('_fichier');
         }
 
-        return array('form' => $form->createView());
+        return array('form' => $form->createView(), 'libelle' => $typeAction);
     }
 
     /**

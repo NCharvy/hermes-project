@@ -17,11 +17,20 @@ class FichierType extends AbstractType
         $builder
             ->add('nom')
             ->add('file', 'file')
+            ->add('typologie', 'entity', array(
+                'class'         =>  'OrangeHomeBundle:Typologie',
+                'property'      =>  'libelle',
+                'multiple'      =>  false,
+                'expanded'      =>  false,
+                'required'      =>  false,
+                'empty_value'   =>  "Sélectionner la typologie"
+            ))
             ->add('soustypologie', 'entity', array(
                 'class'         =>  'OrangeHomeBundle:SousTypologie',
                 'property'      =>  'libelle',
                 'multiple'      =>  false,
                 'expanded'      =>  false,
+                'required'      =>  false,
                 'empty_value'   =>  "Sélectionner la sous-typologie"
             ))
             ->add('enregistrer', 'submit')

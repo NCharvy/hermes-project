@@ -5,20 +5,15 @@
 {% block content %}
     <div class="container">
         <div class="starter-template">
-            <h2>Classifications</h2>
+            <h2 style="text-align : center;">Classifications</h2>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <a class="btn btn-primary" href="{{ path('_back') }}" role="button" style="margin-left: 12px;"><i class="icon-circle-arrow-left"></i> Retour</a>
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="col-md-3 col-md-offset-9">
                             <a href="{{ path('_classification_create') }}" class="btn btn-default" style="margin-bottom: 20px;"><i class="icon-plus-sign-alt"></i> Nouvelle classification</a>
                         </div>
                     </div>
-                    <table id="cat_table" class="table table-hover table-bordered table-stripped">
+                    <table id="all-table" class="table table-hover table-bordered table-stripped">
                         <thead>
                         <tr>
                             <th>Identifiant</th>
@@ -33,7 +28,7 @@
                                 <td>{{ c.id }}</td>
                                 <td>{{ c.libelle }}</td>
                                 <td>{{ c.route }}</td>
-                                <td><a href="{{ path('_classification_update', {'id': c.id}) }}"><i class="icon-pencil"></i></a> <a href="{{ path('_classification_delete', {'id': c.id}) }}"><i class="icon-trash"></i></a></td>
+                                <td><a href="{{ path('_classification_update', {'id': c.id}) }}"><i class="fa fa-fw fa-pencil"></i></a> <a href="{{ path('_classification_delete', {'id': c.id}) }}"><i class="fa fa-fw fa-trash"></i></a></td>
                             </tr>
                         {% endfor %}
                         </tbody>
