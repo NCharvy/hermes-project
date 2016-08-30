@@ -17,7 +17,11 @@
                     </div>
                     <ul class="list-group typologie">
                         {% for st in stypos %}
-                            <li class="list-group-item"><a href="{{ path('_show_sfiles', {'id': st.id}) }}">{{ st.libelle }}</a></li>
+                            {% if st.fichiers|length > 0 %}
+                                <li class="list-group-item"><a href="{{ path('_show_sfiles', {'id': st.id}) }}">{{ st.libelle }}</a></li>
+                            {% else %}
+                                <li class="list-group-item inactive-item">{{ st.libelle }}</li>
+                            {% endif %}
                         {% endfor %}
                     </ul>
                 </div>

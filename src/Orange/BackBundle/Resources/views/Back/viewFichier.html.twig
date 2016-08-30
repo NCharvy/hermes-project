@@ -8,30 +8,25 @@
             <h2 style="text-align : center;">Fichiers</h2>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <div class="row">
-                        <div class="col-md-3 col-md-offset-9">
-                            <a href="{{ path('_fichier_create') }}" class="btn btn-default" style="margin-bottom: 20px;"><i class="icon-plus-sign-alt"></i> Nouveau fichier</a>
-                        </div>
-                    </div>
                     <table id="all-table" class="table table-hover table-bordered table-stripped">
                         <thead>
                         <tr>
-                            <th>Identifiant</th>
-                            <th>Libellé</th>
+                            <th>Date</th>
+                            <th>Nom</th>
                             <th>Typologie</th>
                             <th>Sous-typologie</th>
-                            <th>Date</th>
+                            <th>Type</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
                         {% for f in file %}
                             <tr>
-                                <td>{{ f.id }}</td>
+                                <td>{{ f.date|date("d/m/Y") }}</td>
                                 <td>{{ f.nom }}</td>
                                 <td>{% if f.typologie is not null %}{{ f.typologie.libelle }}{% else %}Non{% endif %}</td>
                                 <td>{% if f.soustypologie is not null %}{{ f.soustypologie.libelle }}{% else %}Non{% endif %}</td>
-                                <td>{{ f.date|date("d/m/Y") }}</td>
+                                <td>{% if f.type is not null %}{{ f.type.libelle }}{% else %}Non défini{% endif %}</td>
                                 <td><a href="{{ path('_fichier_update', {'id': f.id}) }}"><i class="fa fa-fw fa-pencil"></i></a> <a href="{{ path('_fichier_delete', {'id': f.id}) }}"><i class="fa fa-fw fa-trash"></i></a></td>
                             </tr>
                         {% endfor %}
@@ -41,4 +36,13 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $('#all-table').DataTable();
+        $('div.dataTables_filter').addClass('col-sm-offset-3');
+        $('.dataTables_wrapper .row:nth-child(3) > div:nth-child(1)').addClass('col-sm-4');
+        $('.dataTables_wrapper .row:nth-child(3) > div:nth-child(2)').addClass('col-sm-8');
+    </script>
 {% endblock %}

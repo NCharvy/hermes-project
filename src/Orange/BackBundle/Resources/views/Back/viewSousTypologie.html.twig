@@ -8,11 +8,6 @@
             <h2 style="text-align : center;">Sous-typologies</h2>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <div class="row">
-                        <div class="col-md-3 col-md-offset-9">
-                            <a href="{{ path('_soustypologie_create') }}" class="btn btn-default" style="margin-bottom: 20px;"><i class="icon-plus-sign-alt"></i> Nouvelle sous-typologie</a>
-                        </div>
-                    </div>
                     <table id="all-table" class="table table-hover table-bordered table-stripped">
                         <thead>
                         <tr>
@@ -39,4 +34,13 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $('#all-table').DataTable();
+        $('div.dataTables_filter').addClass('col-sm-offset-3');
+        $('.dataTables_wrapper .row:nth-child(3) > div:nth-child(1)').addClass('col-sm-4');
+        $('.dataTables_wrapper .row:nth-child(3) > div:nth-child(2)').addClass('col-sm-8');
+    </script>
 {% endblock %}

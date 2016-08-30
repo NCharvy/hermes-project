@@ -13,14 +13,38 @@
             </div>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
+                    {% set i = 0 %}
                     {% for f in files %}
+                        {% set i = i + 1 %}
                         <div class="col-md-4 file-cont">
-                            <div class="panel panel-default col-md-10">
+                            <div class="panel panel-default col-md-10 file-div">
                                 <h3>{{ f.nom }}</h3>
+                                {% if f.type.libelle == "Image" %}
+                                    <a data-toggle="modal" data-target="#show-image" href="" class="click-image" id="a-click-{{ i }}" onclick="showModal(this.id);">
+                                        <img src="{{ asset('uploads/resources/' ~ f.lien) }}" alt="{{ f.nom }}" width="150" />
+                                    </a>
+                                {% elseif f.type.libelle == "Document" %}
+                                    <iframe src="{{ asset('uploads/resources/' ~ f.lien) }}" width="150"></iframe>
+                                {% endif %}
+                                <p style="color : #222 !important;">Type : {{ f.type.libelle }}</p>
                                 <a target="_blank" href="{{ asset('uploads/resources/' ~ f.lien) }}">Télécharger le fichier</a>
                             </div>
                         </div>
                     {% endfor %}
+                    <div class="modal fade" id="show-image" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dissmiss="modal">
+                                            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                                        </button>
+                                        <img class="img-preview" src="" style="width:100%;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

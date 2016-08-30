@@ -40,6 +40,11 @@ ul.list-group li a{
   text-decoration : none;
 }
 
+li.inactive-item{
+  background-color : #777 !important;
+  color : #AAA !important;
+}
+
 li.list-group-item {
   border: 0;
 }
@@ -82,4 +87,58 @@ li.list-group-item:hover {
 
 .file-cont h3{
   color : #222 !important;
+}
+
+.post-search{
+  position : relative;
+}
+
+.loupe{
+  position : absolute;
+  font-size : 1.5em;
+  right : 95px;
+  top : 5%;
+  color : #222;
+  border : none !important;
+  background-color : #fff;
+  width : 25px;
+  height : 25px;
+}
+
+input{
+  color : #222 !important;
+}
+
+input::-webkit-input-placeholder{
+  color : #666 !important;
+}
+
+input:-moz-placeholder{
+  color : #666 !important;
+}
+
+.file-div{
+  height : 320px;
+}
+
+
+@media screen and (min-width : 992px){
+  .main-classification{
+    max-height : 258px;
+    overflow : hidden !important;
+  }
+  .main-row{
+    margin-bottom : 30px;
+  }
+  .dev{
+    color : #222;
+    margin-left : -24px !important;
+  }
+}
+
+@media screen and (min-width : 1200px){
+  .dev{
+    color : #222;
+    margin-left : -13px !important;
+  }
 }

@@ -32,6 +32,7 @@ class HomeController extends Controller
         $em = $this->getDoctrine()->getManager();
         $typo = $em->getRepository("OrangeHomeBundle:Typologie")->find($id);
         $files = $em->getRepository("OrangeHomeBundle:Fichier")->findBy(array('typologie' => $id));
+
         return $this->render('OrangeHomeBundle:Home:display_files_typo.html.twig', array(
             'typo' => $typo,
             'files' => $files
@@ -61,6 +62,7 @@ class HomeController extends Controller
         $st = $em->getRepository("OrangeHomeBundle:SousTypologie")->find($id);
         $typo = $st->getTypologie();
         $files = $em->getRepository("OrangeHomeBundle:Fichier")->findBy(array('soustypologie' => $id));
+
         return $this->render('OrangeHomeBundle:Home:display_files_stypo.html.twig', array(
             'st'    => $st,
             'typo'  =>  $typo,
@@ -78,4 +80,18 @@ class HomeController extends Controller
         ));
     }
 
+    /**
+    * @Route("/post-search", name="_post_search")
+    */
+    public function postSearch(Request $req){
+        $search = $req->request->get('search');
+        $em = $this->getDoctrine()->getManager();
+
+        $query = $em->createQuery("SELECT f, t FROM OrangeHomeBundle:Type t INNER JOIN t.fichiers f WHERE f.nom LIKE '%$search%'");
+        $files = $query->getResult();
+
+        return $this->render('OrangeHomeBundle:Home:search.html.twig', array(
+            'files' => $files
+        ));
+    }
 }

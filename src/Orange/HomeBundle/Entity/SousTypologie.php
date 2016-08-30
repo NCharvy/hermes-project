@@ -23,10 +23,17 @@ class SousTypologie
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="Orange\HomeBundle\Entity\Typologie")
+     * @ORM\ManyToOne(targetEntity="Orange\HomeBundle\Entity\Typologie", inversedBy="soustypologie")
      * @ORM\JoinColumn(nullable=false)
      */
     private $typologie;
+
+    /**
+    *
+    * @ORM\OneToMany(targetEntity="Orange\HomeBundle\Entity\Fichier", mappedBy="soustypologie")
+    * @ORM\JoinColumn(referencedColumnName="id", nullable=true)
+    */
+    private $fichiers;
 
     /**
      * @var string
@@ -120,5 +127,45 @@ class SousTypologie
     public function getTypologie()
     {
         return $this->typologie;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->fichiers = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add fichiers
+     *
+     * @param \Orange\HomeBundle\Entity\Fichier $fichiers
+     * @return SousTypologie
+     */
+    public function addFichier(\Orange\HomeBundle\Entity\Fichier $fichiers)
+    {
+        $this->fichiers[] = $fichiers;
+
+        return $this;
+    }
+
+    /**
+     * Remove fichiers
+     *
+     * @param \Orange\HomeBundle\Entity\Fichier $fichiers
+     */
+    public function removeFichier(\Orange\HomeBundle\Entity\Fichier $fichiers)
+    {
+        $this->fichiers->removeElement($fichiers);
+    }
+
+    /**
+     * Get fichiers
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFichiers()
+    {
+        return $this->fichiers;
     }
 }

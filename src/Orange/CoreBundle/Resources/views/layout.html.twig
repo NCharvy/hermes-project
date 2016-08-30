@@ -34,7 +34,7 @@
                         <a href="{{ path('_back') }}"><i class="fa fa-fw fa-dashboard"></i> Tableau de bord</a>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#class"><i class="fa fa-fw fa-rss"></i> Classifications <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#class"><i class="fa fa-fw fa-archive"></i> Classifications <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="class" class="collapse">
                             <li>
                                 <a href="{{ path('_classification') }}">Toutes les classifications</a>
@@ -45,7 +45,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#typo"><i class="fa fa-fw fa-rss"></i> Typologies <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#typo"><i class="fa fa-fw fa-tag"></i> Typologies <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="typo" class="collapse">
                             <li>
                                 <a href="{{ path('_typologie') }}">Toutes les typologies</a>
@@ -56,7 +56,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#stypo"><i class="fa fa-fw fa-rss"></i> Sous-typologies <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#stypo"><i class="fa fa-fw fa-tags"></i> Sous-typologies <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="stypo" class="collapse">
                             <li>
                                 <a href="{{ path('_soustypologie') }}">Toutes les sous-typologies</a>
@@ -67,13 +67,24 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#file"><i class="fa fa-fw fa-rss"></i> Fichiers <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#file"><i class="fa fa-fw fa-file"></i> Fichiers <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="file" class="collapse">
                             <li>
                                 <a href="{{ path('_fichier') }}">Tous les fichiers</a>
                             </li>
                             <li>
                                 <a href="{{ path('_fichier_create') }}">Ajouter un fichier</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#type"><i class="fa fa-fw fa-book"></i> Types de fichiers <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="type" class="collapse">
+                            <li>
+                                <a href="{{ path('_type') }}">Tous les types de fichiers</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('_type_create') }}">Ajouter un type de fichier</a>
                             </li>
                         </ul>
                     </li>

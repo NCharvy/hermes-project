@@ -29,6 +29,20 @@ class Typologie
     private $classification;
 
     /**
+    *
+    * @ORM\OneToMany(targetEntity="Orange\HomeBundle\Entity\Fichier", mappedBy="typologie")
+    * @ORM\JoinColumn(referencedColumnName="id", nullable=true)
+    */
+    private $fichiers;
+
+    /**
+    *
+    * @ORM\OneToMany(targetEntity="Orange\HomeBundle\Entity\SousTypologie", mappedBy="typologie")
+    * @ORM\JoinColumn(referencedColumnName="id", nullable=true)
+    */
+    private $soustypologies;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="libelle", type="string", length=255)
@@ -45,7 +59,7 @@ class Typologie
     /**
      * @var bool
      *
-     * @ORM\Column(name="sublevel", type="boolean")
+     * @ORM\Column(name="sublevel", type="boolean", nullable=true)
      */
     private $sublevel;
 
@@ -126,5 +140,28 @@ class Typologie
     public function getClassification()
     {
         return $this->classification;
+    }
+
+    /**
+     * Set sublevel
+     *
+     * @param boolean $sublevel
+     * @return Typologie
+     */
+    public function setSublevel($sublevel)
+    {
+        $this->sublevel = $sublevel;
+
+        return $this;
+    }
+
+    /**
+     * Get sublevel
+     *
+     * @return boolean 
+     */
+    public function getSublevel()
+    {
+        return $this->sublevel;
     }
 }

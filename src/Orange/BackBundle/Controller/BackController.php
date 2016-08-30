@@ -306,6 +306,30 @@ class BackController extends Controller
 
         if($form->handleRequest($req)->isValid()){
             $em = $this->getDoctrine()->getManager();
+            $exts = $em->getRepository('OrangeHomeBundle:Extension')->findAll();
+
+            $lien = $file->getLien();
+            $ext = substr(strrchr($lien, '.'), 1);
+            $newext = null;
+
+            foreach($exts as $e){
+                if($ext == $e->getNom()){
+                    $newext = $e->getNom();
+                    break;
+                }
+            }
+            if($newext == null){
+                $extension = new Extension;
+                $extension->setNom($ext);
+                $extension->setType($file->getType());
+
+                $em->persist($extension);
+                $em->flush();
+            }
+
+            $extFile = $em->getRepository('OrangeHomeBundle:Extension')->findOneBy(array('nom' => $ext));
+
+            $file->setExtension($extFile);
             $file->setDate(new \DateTime());
             $em->persist($file);
             $em->flush();
@@ -356,4 +380,81 @@ class BackController extends Controller
         return $this->redirectToRoute('_fichier');
     }
 
+    /**
+     * @Route("/back/type", name="_type")
+     * @Template()
+     */
+    public function viewTypeAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $type = $em->getRepository('OrangeHomeBundle:Type')->findAll();
+
+        return array(
+            'type' => $type
+        );    }
+
+    /**
+     * @Route("/back/type/create", name="_type_create")
+     * @Template()
+     */
+    public function createTypeAction(Request $req)
+    {
+        /*if(!$this->get('security.context')->isGranted('IS_AUTHENTICATED_REMEMBERED')){
+            throw new AccessDeniedException('Accès limité aux utilisateurs authentifiés.');
+        }*/
+
+        $type = new Type;
+        $form = $this->get('form.factory')->create(new TypeType(), $type);
+        $typeAction = "Création";
+
+        if($form->handleRequest($req)->isValid()){
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($type);
+            $em->flush();
+
+            $req->getSession()->getFlashBag()->add('notice', 'La société a bien été ajoutée.');
+
+            return $this->redirectToRoute('_type');
+        }
+
+        return array('form' => $form->createView(), 'libelle' => $typeAction);
+    }
+
+    /**
+     * @Route("/back/type/update/{id}", name="_type_update")
+     * @Template("OrangeBackBundle:Back:createType.html.twig")
+     */
+    public function updateTypeAction(Request $req, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $type = $em->getRepository('OrangeHomeBundle:Type')->find($id);
+        $typeAction = "Modification";
+
+        $form = $this->get('form.factory')->create(new TypeType(), $type);
+
+        if($form->handleRequest($req)->isValid()){
+            $em->persist($type);
+            $em->flush();
+
+            $req->getSession()->getFlashBag()->add('notice', 'La société a bien été modifiée.');
+
+            return $this->redirectToRoute('_type');
+        }
+
+        return array('form' => $form->createView(), 'libelle' => $typeAction);
+    }
+
+    /**
+     * @Route("/back/type/delete/{id}", name="_type_delete")
+     */
+    public function deleteTypeAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $type = $em->getRepository('OrangeHomeBundle:Type')->find($id);
+
+        $em->remove($type);
+        $em->flush();
+
+        return $this->redirectToRoute('_type');
+    }
 }

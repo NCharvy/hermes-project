@@ -1,0 +1,36 @@
+{% extends "OrangeCoreBundle::base.html.twig" %}
+
+{% block title %}Base de données - DCR{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="starter-template">
+            <h1>Résultat de la recherche</h1>
+            <div class="row">
+                <div class="col-md-3">
+                    <a class="btn btn-primary" href="{{ path('_home') }}" role="button" style="margin-bottom: 20px;"><i class="icon-circle-arrow-left"></i> Retour</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    {% for t in files %}
+                        <div style="margin-bottom : 20%;">
+                            <h3>{{ t.libelle }}</h3>
+                            {% for f in t.fichiers %}
+                                <div class="col-md-4 file-cont">
+                                    <div class="panel panel-default col-md-10">
+                                        <h3>{{ f.nom }}</h3>
+                                        <a target="_blank" href="{{ asset('uploads/resources/' ~ f.lien) }}">Télécharger le fichier</a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+    {% include "OrangeCoreBundle::foot.html.twig" %}
+{% endblock %}

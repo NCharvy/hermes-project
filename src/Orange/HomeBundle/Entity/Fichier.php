@@ -25,17 +25,31 @@ class Fichier
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="Orange\HomeBundle\Entity\SousTypologie")
+     * @ORM\ManyToOne(targetEntity="Orange\HomeBundle\Entity\SousTypologie", inversedBy="fichiers")
      * @ORM\JoinColumn(nullable=true)
      */
     private $soustypologie;
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="Orange\HomeBundle\Entity\Typologie")
+     * @ORM\ManyToOne(targetEntity="Orange\HomeBundle\Entity\Typologie", inversedBy="fichiers")
      * @ORM\JoinColumn(nullable=true)
      */
     private $typologie;
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="Orange\HomeBundle\Entity\Type", inversedBy="fichiers")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $type;
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="Orange\HomeBundle\Entity\Extension")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $extension;
 
     /**
      * @var UploadedFile
@@ -285,5 +299,51 @@ class Fichier
     public function getFile()
     {
         return $this->file;
+    }
+
+    /**
+     * Set type
+     *
+     * @param \Orange\HomeBundle\Entity\Type $type
+     * @return Fichier
+     */
+    public function setType(\Orange\HomeBundle\Entity\Type $type = null)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return \Orange\HomeBundle\Entity\Type 
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set extension
+     *
+     * @param \Orange\HomeBundle\Entity\Extension $extension
+     * @return Fichier
+     */
+    public function setExtension(\Orange\HomeBundle\Entity\Extension $extension = null)
+    {
+        $this->extension = $extension;
+
+        return $this;
+    }
+
+    /**
+     * Get extension
+     *
+     * @return \Orange\HomeBundle\Entity\Extension 
+     */
+    public function getExtension()
+    {
+        return $this->extension;
     }
 }

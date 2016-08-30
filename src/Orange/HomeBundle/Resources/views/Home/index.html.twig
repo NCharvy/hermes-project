@@ -6,22 +6,37 @@
     <div class="starter-template">
         <h1>DCR / DevCo Normandie-Centre</h1>
         <h2>Base de données commerciale 2016</h2>
-        <div class="row">
+        <div class="row main-row">
+            {% set i = 0 %}
             {% for c in classifications %}
-            <div class="col-md-4">
-                <div class="header-classification" {% if c.visuel is defined %}style="background: url(uploads/visuels/{{ c.visuel }}); background-size : cover; background-position : center;"{% endif %}>
-                    <h2>{{ c.libelle }}, <br /> {{ c.description }}</h2>
+                {% set i = i + 1 %}
+                <div class="col-md-4" id="parent-class-{{ i }}">
+                    <div class="header-classification" {% if c.visuel is defined %}style="background: url(uploads/visuels/{{ c.visuel }}); background-size : cover; background-position : center;"{% endif %}>
+                        <h2>{{ c.libelle }}, <br /> {{ c.description }}</h2>
+                    </div>
+                    <div class="main-classification" id="class-{{ i }}">
+                        <ul class="list-group classification">
+                        {% for t in c.typologies %}
+                            {% if t.sublevel == false %}
+                                {% if t.fichiers|length > 0 %}
+                                    <li class="list-group-item"><a href="{{ path('_show_files', {'id': t.id}) }}">{{ t.libelle }}</a></li>
+                                {% else %}
+                                    <li class="list-group-item inactive-item">{{ t.libelle }}</li>
+                                {% endif %}
+                            {% else %}
+                                {% if t.soustypologies|length > 0 %}
+                                    <li class="list-group-item"><a href="{{ path('_home_flevel', {'route': t.route}) }}">{{ t.libelle }}</a></li>
+                                {% else %}
+                                    <li class="list-group-item inactive-item">{{ t.libelle }}</li>
+                                {% endif %} 
+                            {% endif %}
+                        {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="button-develop col-md-2 col-md-offset-10">
+
+                    </div>
                 </div>
-                <ul class="list-group classification">
-                {% for t in c.typologies %}
-                    {% if t.sublevel == false %}
-                    <li class="list-group-item"><a href="{{ path('_show_files', {'id': t.id}) }}">{{ t.libelle }}</a></li>
-                    {% else %}
-                    <li class="list-group-item"><a href="{{ path('_home_flevel', {'route': t.route}) }}">{{ t.libelle }}</a></li>
-                    {% endif %}
-                {% endfor %}
-                </ul>
-            </div>
             {% endfor %}
         </div>
     </div>

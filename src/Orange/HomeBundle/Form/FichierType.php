@@ -33,6 +33,13 @@ class FichierType extends AbstractType
                 'required'      =>  false,
                 'empty_value'   =>  "Sélectionner la sous-typologie"
             ))
+            ->add('type', 'entity', array(
+                'class'         =>  'OrangeHomeBundle:Type',
+                'property'      =>  'libelle',
+                'multiple'      =>  false,
+                'expanded'      =>  false,
+                'empty_value'   =>  "Sélectionner le type de fichier"
+            ))
             ->add('enregistrer', 'submit')
         ;
     }
