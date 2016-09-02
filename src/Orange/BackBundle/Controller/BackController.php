@@ -7,6 +7,7 @@ use Orange\HomeBundle\Entity\Fichier;
 use Orange\HomeBundle\Entity\SousTypologie;
 use Orange\HomeBundle\Entity\Type;
 use Orange\HomeBundle\Entity\Typologie;
+use Orange\HomeBundle\Entity\Extension;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -28,10 +29,10 @@ class BackController extends Controller
     /**
      * @Route("/back", name="_back")
      */
-    public function indexAction()
+    /*public function indexAction()
     {
         return $this->render('OrangeBackBundle:Back:index.html.twig');
-    }
+    }*/
 
     /**
      * @Route("/back/classification", name="_classification")
@@ -228,6 +229,7 @@ class BackController extends Controller
             $route = htmlentities(strtolower($route));
             $route = preg_replace('/&(.)[^;]+;/', '$1', $route);
             $stypo->setRoute($route);
+
             $em->persist($stypo);
             $em->flush();
 
@@ -409,8 +411,15 @@ class BackController extends Controller
 
         if($form->handleRequest($req)->isValid()){
             $em = $this->getDoctrine()->getManager();
+            $route = str_replace(' ', '_', $type->getLibelle());
+            $route = str_replace('\'', '_', $route);
+            $route = htmlentities(strtolower($route));
+            $route = preg_replace('/&(.)[^;]+;/', '$1', $route);
+            $type->setRoute($route);
             $em->persist($type);
             $em->flush();
+
+            $path = __DIR__ . "/../../../../web/uploads/resources/";
 
             $req->getSession()->getFlashBag()->add('notice', 'La société a bien été ajoutée.');
 

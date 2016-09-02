@@ -247,7 +247,9 @@ class Fichier
 
     public function getUploadDir()
     {
-        return 'uploads/resources';
+        $dir = "uploads/resources/" . $this->getType()->getRoute();
+
+        return $dir;
     }
 
     /**

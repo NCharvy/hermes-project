@@ -29,9 +29,19 @@ function showModal(id){
 
 function developClass(id){
     var $c = $('#' + id);
+    var $b = $c.parent().find('button');
 
-    $c.animate({
-        overflow : 'none',
-        maxHeight : '100%'
-    }, 3000);
+    if($c.css('max-height') == '258px'){
+        $c.animate({
+            overflow : 'none',
+            maxHeight : '100%'
+        }, 500);
+        //$c.css('max-height', '100%');
+    }
+    else{
+        $c.animate({
+            overflow : 'auto',
+            maxHeight : '258px'
+        }, 500);
+    }
 }

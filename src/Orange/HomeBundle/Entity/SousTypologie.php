@@ -30,7 +30,7 @@ class SousTypologie
 
     /**
     *
-    * @ORM\OneToMany(targetEntity="Orange\HomeBundle\Entity\Fichier", mappedBy="soustypologie")
+    * @ORM\OneToMany(targetEntity="Orange\HomeBundle\Entity\Fichier", mappedBy="soustypologie", orphanRemoval=true)
     * @ORM\JoinColumn(referencedColumnName="id", nullable=true)
     */
     private $fichiers;

@@ -30,14 +30,14 @@ class Typologie
 
     /**
     *
-    * @ORM\OneToMany(targetEntity="Orange\HomeBundle\Entity\Fichier", mappedBy="typologie")
+    * @ORM\OneToMany(targetEntity="Orange\HomeBundle\Entity\Fichier", mappedBy="typologie", orphanRemoval=true)
     * @ORM\JoinColumn(referencedColumnName="id", nullable=true)
     */
     private $fichiers;
 
     /**
     *
-    * @ORM\OneToMany(targetEntity="Orange\HomeBundle\Entity\SousTypologie", mappedBy="typologie")
+    * @ORM\OneToMany(targetEntity="Orange\HomeBundle\Entity\SousTypologie", mappedBy="typologie", orphanRemoval=true)
     * @ORM\JoinColumn(referencedColumnName="id", nullable=true)
     */
     private $soustypologies;
@@ -163,5 +163,79 @@ class Typologie
     public function getSublevel()
     {
         return $this->sublevel;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->fichiers = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->soustypologies = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add fichiers
+     *
+     * @param \Orange\HomeBundle\Entity\Fichier $fichiers
+     * @return Typologie
+     */
+    public function addFichier(\Orange\HomeBundle\Entity\Fichier $fichiers)
+    {
+        $this->fichiers[] = $fichiers;
+
+        return $this;
+    }
+
+    /**
+     * Remove fichiers
+     *
+     * @param \Orange\HomeBundle\Entity\Fichier $fichiers
+     */
+    public function removeFichier(\Orange\HomeBundle\Entity\Fichier $fichiers)
+    {
+        $this->fichiers->removeElement($fichiers);
+    }
+
+    /**
+     * Get fichiers
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFichiers()
+    {
+        return $this->fichiers;
+    }
+
+    /**
+     * Add soustypologies
+     *
+     * @param \Orange\HomeBundle\Entity\SousTypologie $soustypologies
+     * @return Typologie
+     */
+    public function addSoustypology(\Orange\HomeBundle\Entity\SousTypologie $soustypologies)
+    {
+        $this->soustypologies[] = $soustypologies;
+
+        return $this;
+    }
+
+    /**
+     * Remove soustypologies
+     *
+     * @param \Orange\HomeBundle\Entity\SousTypologie $soustypologies
+     */
+    public function removeSoustypology(\Orange\HomeBundle\Entity\SousTypologie $soustypologies)
+    {
+        $this->soustypologies->removeElement($soustypologies);
+    }
+
+    /**
+     * Get soustypologies
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSoustypologies()
+    {
+        return $this->soustypologies;
     }
 }

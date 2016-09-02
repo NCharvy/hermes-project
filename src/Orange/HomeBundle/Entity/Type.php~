@@ -35,6 +35,12 @@ class Type
      */
     private $fichiers;
 
+    /**
+    * @var string
+    *
+    * @ORM\Column(name="route", type="string", length=100)
+    */
+    private $route;
 
     /**
      * Get id
@@ -67,5 +73,45 @@ class Type
     public function getLibelle()
     {
         return $this->libelle;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->fichiers = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add fichiers
+     *
+     * @param \Orange\HomeBundle\Entity\Fichier $fichiers
+     * @return Type
+     */
+    public function addFichier(\Orange\HomeBundle\Entity\Fichier $fichiers)
+    {
+        $this->fichiers[] = $fichiers;
+
+        return $this;
+    }
+
+    /**
+     * Remove fichiers
+     *
+     * @param \Orange\HomeBundle\Entity\Fichier $fichiers
+     */
+    public function removeFichier(\Orange\HomeBundle\Entity\Fichier $fichiers)
+    {
+        $this->fichiers->removeElement($fichiers);
+    }
+
+    /**
+     * Get fichiers
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFichiers()
+    {
+        return $this->fichiers;
     }
 }

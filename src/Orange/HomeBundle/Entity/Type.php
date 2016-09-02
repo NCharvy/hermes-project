@@ -35,6 +35,12 @@ class Type
      */
     private $fichiers;
 
+    /**
+    * @var string
+    *
+    * @ORM\Column(name="route", type="string", length=100)
+    */
+    private $route;
 
     /**
      * Get id
@@ -107,5 +113,28 @@ class Type
     public function getFichiers()
     {
         return $this->fichiers;
+    }
+
+    /**
+     * Set route
+     *
+     * @param string $route
+     * @return Type
+     */
+    public function setRoute($route)
+    {
+        $this->route = $route;
+
+        return $this;
+    }
+
+    /**
+     * Get route
+     *
+     * @return string 
+     */
+    public function getRoute()
+    {
+        return $this->route;
     }
 }

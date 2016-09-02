@@ -247,7 +247,9 @@ class Fichier
 
     public function getUploadDir()
     {
-        return 'uploads/resources';
+        $dir = "uploads/resources/" . $this->getType()->getRoute();
+
+        return $dir;
     }
 
     /**
@@ -322,5 +324,28 @@ class Fichier
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Set extension
+     *
+     * @param \Orange\HomeBundle\Entity\Extension $extension
+     * @return Fichier
+     */
+    public function setExtension(\Orange\HomeBundle\Entity\Extension $extension = null)
+    {
+        $this->extension = $extension;
+
+        return $this;
+    }
+
+    /**
+     * Get extension
+     *
+     * @return \Orange\HomeBundle\Entity\Extension 
+     */
+    public function getExtension()
+    {
+        return $this->extension;
     }
 }

@@ -30,14 +30,14 @@ class Typologie
 
     /**
     *
-    * @ORM\OneToMany(targetEntity="Orange\HomeBundle\Entity\Fichier", mappedBy="typologie")
+    * @ORM\OneToMany(targetEntity="Orange\HomeBundle\Entity\Fichier", mappedBy="typologie", orphanRemoval=true)
     * @ORM\JoinColumn(referencedColumnName="id", nullable=true)
     */
     private $fichiers;
 
     /**
     *
-    * @ORM\OneToMany(targetEntity="Orange\HomeBundle\Entity\SousTypologie", mappedBy="typologie")
+    * @ORM\OneToMany(targetEntity="Orange\HomeBundle\Entity\SousTypologie", mappedBy="typologie", orphanRemoval=true)
     * @ORM\JoinColumn(referencedColumnName="id", nullable=true)
     */
     private $soustypologies;
