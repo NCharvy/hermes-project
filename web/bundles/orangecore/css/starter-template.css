@@ -93,11 +93,15 @@ li.list-group-item:hover {
   position : relative;
 }
 
+.form-search{
+  margin-top : 28px;
+}
+
 .loupe{
   position : absolute;
   font-size : 1.5em;
-  right : 95px;
   top : 5%;
+  right : 38%;
   color : #222;
   border : none !important;
   background-color : #fff;
@@ -121,6 +125,11 @@ input:-moz-placeholder{
   height : 320px;
 }
 
+@media screen and (min-width : 768px){
+  .loupe{
+    right : 0px;
+  }
+}
 
 @media screen and (min-width : 992px){
   .main-classification{
@@ -134,6 +143,9 @@ input:-moz-placeholder{
     color : #222;
     margin-left : -24px !important;
   }
+  .loupe{
+    right : 50px;
+  }
 }
 
 @media screen and (min-width : 1200px){
@@ -141,4 +153,13 @@ input:-moz-placeholder{
     color : #222;
     margin-left : -13px !important;
   }
+  .loupe{
+    right : 100px;
+  }
+}
+
+.clearfix:after{
+  clear : both;
+  float : none;
+  content : "";
 }

@@ -25,12 +25,12 @@
 <div class="content-wrapper">
     <div class="container">
         <div class="row">
-            <div class="col-sm-2" id="logo-front">
+            <div class="col-sm-2 col-xs-4" id="logo-front">
                 <a href="{{ path('_home') }}">
                     <img src="{{ asset('bundles/orangecore/img/orange-logo.png') }}" width="100"/>
                 </a>
             </div>
-            <div class="col-sm-3 col-sm-offset-7 form-search">
+            <div class="col-sm-3 col-sm-offset-7 col-xs-5 col-xs-offset-3 form-search">
                 <form id="post-search" method="post" action="{{ path('_post_search') }}">
                     <input type="text" name="search" placeholder="Recherche..." />
                     <button class="loupe"><i class="fa fa-fw fa-search"></i></button>
