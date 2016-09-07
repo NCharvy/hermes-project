@@ -43,6 +43,7 @@ ul.list-group li a{
 li.inactive-item{
   background-color : #777 !important;
   color : #AAA !important;
+  display : none;
 }
 
 li.list-group-item {
@@ -146,6 +147,9 @@ input:-moz-placeholder{
   .loupe{
     right : 50px;
   }
+  #cont-engine{
+    margin-top : 56px;
+  }
 }
 
 @media screen and (min-width : 1200px){
@@ -162,4 +166,13 @@ input:-moz-placeholder{
   clear : both;
   float : none;
   content : "";
+}
+
+#search-engine{
+  text-align : justify !important;
+  color : #222 !important;
+}
+
+#search-engine button{
+  margin-top : 20px;
 }

@@ -30,39 +30,39 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <!--<li>
-                        <a href="lien back"><i class="fa fa-fw fa-dashboard"></i> Tableau de bord</a>
-                    </li>-->
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#class"><i class="fa fa-fw fa-archive"></i> Classifications <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="{{ path('_back') }}"><i class="fa fa-fw fa-dashboard"></i> Tableau de bord</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#class"><i class="fa fa-fw fa-archive"></i> Thématiques <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="class" class="collapse">
                             <li>
-                                <a href="{{ path('_classification') }}">Toutes les classifications</a>
+                                <a href="{{ path('_classification') }}">Toutes les thématiques</a>
                             </li>
                             <li>
-                                <a href="{{ path('_classification_create') }}">Créer une classification</a>
+                                <a href="{{ path('_classification_create') }}">Créer une thématique</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#typo"><i class="fa fa-fw fa-tag"></i> Typologies <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#typo"><i class="fa fa-fw fa-tag"></i> Familles <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="typo" class="collapse">
                             <li>
-                                <a href="{{ path('_typologie') }}">Toutes les typologies</a>
+                                <a href="{{ path('_typologie') }}">Toutes les familles</a>
                             </li>
                             <li>
-                                <a href="{{ path('_typologie_create') }}">Créer une typologie</a>
+                                <a href="{{ path('_typologie_create') }}">Créer une famille</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#stypo"><i class="fa fa-fw fa-tags"></i> Sous-typologies <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#stypo"><i class="fa fa-fw fa-tags"></i> Sous-familles <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="stypo" class="collapse">
                             <li>
-                                <a href="{{ path('_soustypologie') }}">Toutes les sous-typologies</a>
+                                <a href="{{ path('_soustypologie') }}">Toutes les sous-familles</a>
                             </li>
                             <li>
-                                <a href="{{ path('_soustypologie_create') }}">Créer une sous-typologie</a>
+                                <a href="{{ path('_soustypologie_create') }}">Créer une sous-famille</a>
                             </li>
                         </ul>
                     </li>
@@ -74,6 +74,14 @@
                             </li>
                             <li>
                                 <a href="{{ path('_fichier_create') }}">Ajouter un fichier</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#archive"><i class="fa fa-fw fa-database"></i> Archives <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="archive" class="collapse">
+                            <li>
+                                <a href="{{ path('_archive') }}">Toutes les archives</a>
                             </li>
                         </ul>
                     </li>

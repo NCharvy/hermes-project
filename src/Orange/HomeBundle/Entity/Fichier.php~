@@ -82,6 +82,19 @@ class Fichier
      */
     private $date;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_fin", type="date", nullable=true)
+     */
+    private $date_fin;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="archivage", type="boolean", nullable=true)
+     */
+    private $archivage;
 
     /**
      * Get id
@@ -347,5 +360,51 @@ class Fichier
     public function getExtension()
     {
         return $this->extension;
+    }
+
+    /**
+     * Set date_fin
+     *
+     * @param \DateTime $dateFin
+     * @return Fichier
+     */
+    public function setDateFin($dateFin)
+    {
+        $this->date_fin = $dateFin;
+
+        return $this;
+    }
+
+    /**
+     * Get date_fin
+     *
+     * @return \DateTime 
+     */
+    public function getDateFin()
+    {
+        return $this->date_fin;
+    }
+
+    /**
+     * Set archivage
+     *
+     * @param boolean $archivage
+     * @return Fichier
+     */
+    public function setArchivage($archivage)
+    {
+        $this->archivage = $archivage;
+
+        return $this;
+    }
+
+    /**
+     * Get archivage
+     *
+     * @return boolean 
+     */
+    public function getArchivage()
+    {
+        return $this->archivage;
     }
 }

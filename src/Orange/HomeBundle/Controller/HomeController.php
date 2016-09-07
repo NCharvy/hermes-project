@@ -90,8 +90,16 @@ class HomeController extends Controller
         $query = $em->createQuery("SELECT f, t FROM OrangeHomeBundle:Type t INNER JOIN t.fichiers f WHERE f.nom LIKE '%$search%'");
         $files = $query->getResult();
 
+        $thematique = $em->getRepository('OrangeHomeBundle:Classification')->findAll();
+        $famille = $em->getRepository('OrangeHomeBundle:Typologie')->findAll();
+        $sousfamille = $em->getRepository('OrangeHomeBundle:SousTypologie')->findAll();
+
         return $this->render('OrangeHomeBundle:Home:search.html.twig', array(
-            'files' => $files
+            'files' => $files,
+            'thema' => $thematique,
+            'fam' => $famille,
+            'sfam' => $sousfamille, 
+            'search' => $search
         ));
     }
 }

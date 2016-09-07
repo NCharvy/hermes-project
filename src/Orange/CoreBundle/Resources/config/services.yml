@@ -2,3 +2,9 @@ services:
 #    orange_core.example:
 #        class: Orange\CoreBundle\Example
 #        arguments: ["@service_id", "plain_value", %parameter%]
+
+    orange_core.check_files:
+        class: Orange\CoreBundle\Service\CheckFiles
+
+    orange_core.search_engine:
+        class: Orange\CoreBundle\Service\SearchEngine

@@ -7,6 +7,64 @@
         <div class="row" style="text-align : center;">
             <h1>DCR / DevCo Normandie-Centre</h1>
             <h2>Administration de la base de données</h2>
+            <div style="margin-top : 30px;">
+	            <div class="col-md-5 col-md-offset-1">
+	            	<div class="panel panel-default">
+	            		<div class="panel-heading">
+	            			<h2>Espace disque</h2>
+	            		</div>
+		            	<div class="panel-body">
+		            		<table class="table table-hover">
+		            			<tr>
+		            				<td>Taille des fichiers</td>
+		            				<td>{{ size }}</td>
+		            			</tr>
+		            			<tr>
+		            				<td>Taille des archives</td>
+		            				<td>{{ arch }}</td>
+		            			</tr>
+		            			<tr>
+		            				<td>Espace libre</td>
+		            				<td>
+		            					<button
+		            					{% if disk[2].nb < 15 %}
+		            						class="btn btn-danger"
+		            					{% elseif disk[2].nb < 25 %}
+		            						class="btn btn-warning"
+		            					{% elseif disk[2].nb < 50 %}
+		            						class="btn btn-default"
+		            					{% elseif disk[2].nb < 75 %}
+		            						class="btn btn-info"
+		            					{% else %}
+		            						class="btn btn-success"
+		            					{% endif %}
+		            					>
+		            						{{ disk[0].nb }}
+		            					</button>
+		            				</td>
+		            			</tr>
+		            		</table>
+		            	</div>
+	            	</div>
+	            </div>
+	            <div class="col-md-5">
+		            <div class="panel panel-default">
+		            	<div class="panel-heading">
+		            		<h2>Nombre de fichiers</h2>
+		            	</div>
+		            	<div class="panel-body">
+		            		<table class="table table-hover">
+		            			{% for nbf in nbfiles %}
+		            				<tr>
+		            					<td>{{ nbf.type }}</td>
+		            					<td>{{ nbf.nb }}</td>
+		            				</tr>
+		            			{% endfor %}
+		            		</table>
+		            	</div>
+		            </div>
+		        </div>
+		    </div>
         </div>
     </div>
 {% endblock %}

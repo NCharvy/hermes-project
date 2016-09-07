@@ -29,10 +29,26 @@ class BackController extends Controller
     /**
      * @Route("/back", name="_back")
      */
-    /*public function indexAction()
+    public function indexAction()
     {
-        return $this->render('OrangeBackBundle:Back:index.html.twig');
-    }*/
+        $chkfiles = $this->get('orange_core.check_files');
+
+        $em = $this->getDoctrine()->getManager();
+        $files = $em->getRepository('OrangeHomeBundle:Fichier')->findAll();
+
+        $chkfiles->setFiles($files);
+        $size = $chkfiles->getWeightValidFiles();
+        $arch = $chkfiles->getWeightArchives();
+        $nbfiles = $chkfiles->showNumberFiles($em);
+        $disk = $chkfiles->getWeightFreeSpace();
+
+        return $this->render('OrangeBackBundle:Back:index.html.twig', array(
+            'size' => $size, 
+            'arch' => $arch,
+            'disk' => $disk,
+            'nbfiles' => $nbfiles
+        ));
+    }
 
     /**
      * @Route("/back/classification", name="_classification")
@@ -286,7 +302,22 @@ class BackController extends Controller
     public function viewFichierAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $file = $em->getRepository('OrangeHomeBundle:Fichier')->findAll();
+        $file = $em->getRepository('OrangeHomeBundle:Fichier')
+                    ->createQueryBuilder('f')
+                    ->select('f')
+                    ->where('f.archivage = false')
+                    ->getQuery()
+                    ->getResult();
+        $chkfiles = $this->get('orange_core.check_files');
+
+        foreach($file as $f){
+            if($f->getDateFin() != null){
+                $end = strtotime($f->getDateFin());
+                if($end <= time()){
+                    $chkfiles->moveFile($f, $em);
+                }
+            }
+        }
 
         return array(
             'file' => $file
@@ -333,6 +364,7 @@ class BackController extends Controller
 
             $file->setExtension($extFile);
             $file->setDate(new \DateTime());
+            $file->setArchivage(false);
             $em->persist($file);
             $em->flush();
 
@@ -466,4 +498,23 @@ class BackController extends Controller
 
         return $this->redirectToRoute('_type');
     }
+
+    /**
+     * @Route("/back/archive", name="_archive")
+     * @Template("OrangeBackBundle:Back:viewFichier.html.twig")
+     */
+    public function viewArchiveAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $file = $em->getRepository('OrangeHomeBundle:Fichier')
+                    ->createQueryBuilder('f')
+                    ->select('f')
+                    ->where('f.archivage = true')
+                    ->getQuery()
+                    ->getResult();
+
+        return array(
+            'file' => $file,
+            'archivage' => 'Ok !'
+        );    }
 }
