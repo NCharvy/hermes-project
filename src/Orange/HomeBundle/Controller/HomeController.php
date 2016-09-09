@@ -93,12 +93,14 @@ class HomeController extends Controller
         $thematique = $em->getRepository('OrangeHomeBundle:Classification')->findAll();
         $famille = $em->getRepository('OrangeHomeBundle:Typologie')->findAll();
         $sousfamille = $em->getRepository('OrangeHomeBundle:SousTypologie')->findAll();
+        $type = $em->getRepository('OrangeHomeBundle:Type')->findAll();
 
         return $this->render('OrangeHomeBundle:Home:search.html.twig', array(
             'files' => $files,
             'thema' => $thematique,
             'fam' => $famille,
-            'sfam' => $sousfamille, 
+            'sfam' => $sousfamille,
+            'type' => $type,
             'search' => $search
         ));
     }

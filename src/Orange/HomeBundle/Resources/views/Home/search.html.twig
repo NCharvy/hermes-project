@@ -18,24 +18,30 @@
                             <h2>Critères de recherche</h2>
                         </div>
                         <div class="panel-body">
-                            <form method="post" action="" id="search-engine">
+                            <form method="post" action="" id="search-engine" onSubmit="loadCustomSearch();">
                                 <label for="engsearch">Mots-clés : </label><input type="text" id="engsearch" name="engsearch" value="{{ search }}" />
                                 <select name="thema" id="thema">
-                                    <option selected>-- Sélectionner la thématique --</option>
+                                    <option selected value="">-- Sélectionner la thématique --</option>
                                     {% for t in thema %}
                                         <option value="{{ t.id }}">{{ t.libelle }}</option>
                                     {% endfor %}
                                 </select>
                                 <select name="fam" id="fam">
-                                    <option selected>--- Sélectionner la famille --</option>
+                                    <option selected="selected" value="">-- Sélectionner la famille --</option>
                                     {% for f in fam %}
                                         <option value="{{ f.id }}">{{ f.libelle }}</option>
                                     {% endfor %}
                                 </select>
                                 <select name="sfam" id="sfam">
-                                    <option selected>-- Sélectionner la sous-famille --</option>
+                                    <option selected="selected" value="">-- Sélectionner la sous-famille --</option>
                                     {% for sf in sfam %}
                                         <option value="{{ sf.id }}">{{ sf.libelle }}</option>
+                                    {% endfor %}
+                                </select>
+                                <select name="type" id="type">
+                                    <option selected="selected" value="">-- Sélectionner le type de fichier --</option>
+                                    {% for ty in type %}
+                                        <option value="{{ ty.id }}">{{ ty.libelle }}</option>
                                     {% endfor %}
                                 </select>
                                 <button class="btn btn-default">
@@ -45,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8" id="result-custom">
                     {% for t in files %}
                         <div class="clearfix">
                             <h3>{{ t.libelle }}</h3>
