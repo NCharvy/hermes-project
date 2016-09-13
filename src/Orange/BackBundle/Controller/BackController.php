@@ -34,9 +34,21 @@ class BackController extends Controller
         $chkfiles = $this->get('orange_core.check_files');
 
         $em = $this->getDoctrine()->getManager();
-        $files = $em->getRepository('OrangeHomeBundle:Fichier')->findAll();
+        $files = $em->getRepository('OrangeHomeBundle:Fichier')
+                    ->createQueryBuilder('f')
+                    ->select('f')
+                    ->where('f.archivage = false')
+                    ->getQuery()
+                    ->getResult();
+        $archives = $em->getRepository('OrangeHomeBundle:Fichier')
+                    ->createQueryBuilder('f')
+                    ->select('f')
+                    ->where('f.archivage = true')
+                    ->getQuery()
+                    ->getResult();
 
         $chkfiles->setFiles($files);
+        $chkfiles->setArchives($archives);
         $size = $chkfiles->getWeightValidFiles();
         $arch = $chkfiles->getWeightArchives();
         $nbfiles = $chkfiles->showNumberFiles($em);
@@ -501,7 +513,7 @@ class BackController extends Controller
 
     /**
      * @Route("/back/archive", name="_archive")
-     * @Template("OrangeBackBundle:Back:viewFichier.html.twig")
+     * @Template("OrangeBackBundle:Back:releaseFichier.html.twig")
      */
     public function viewArchiveAction()
     {
@@ -517,4 +529,37 @@ class BackController extends Controller
             'file' => $file,
             'archivage' => 'Ok !'
         );    }
+
+    /**
+    * @Route("/back/fichier/archive/{id}", name="_fichier_archive")
+    */
+    public function archiveFichierAction($id){
+        $em = $this->getDoctrine()->getManager();
+
+        $f = $em->getRepository('OrangeHomeBundle:Fichier')->find($id);
+        $chkfiles = $this->get('orange_core.check_files');
+        $chkfiles->moveFile($f, $em);
+
+        return $this->redirectToRoute('_fichier');
+    }
+
+    /**
+     * @Route("/back/archive/release", name="_archive_release")
+     */
+    public function releaseArchiveAction(Request $req)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $dfiles = $req->request->get('file');
+        $path = __DIR__ . '/../../../../web/uploads/archives';
+
+        foreach($dfiles as $df){
+            $file = $em->getRepository('OrangeHomeBundle:Fichier')->find($df);
+            $em->remove($file);
+            $filepath = $path . '/' . $file->getType()->getRoute() . '/' . $file->getLien();
+            unlink($filepath);
+        }
+        $em->flush();
+
+        return $this->redirectToRoute('_archive');
+    }
 }

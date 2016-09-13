@@ -1,0 +1,47 @@
+{% extends "OrangeCoreBundle::layout.html.twig" %}
+
+{% block title %}Admin - DCR{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="starter-template">
+            <h2 style="text-align : center;">Archives</h2>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <form method="post" action="{{ path('_archive_release') }}">
+                        <table id="all-table" class="table table-hover table-bordered table-stripped">
+                            <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Date de fin</th>
+                                <th>Type</th>
+                                <th>Suppression</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for f in file %}
+                                <tr>
+                                    <td>{{ f.nom }}</td>
+                                    <td>{% if f.dateFin is defined %}{{ f.dateFin }}{% else %}Non défini{% endif %}</td>
+                                    <td>{{ f.type.libelle }}</td>
+                                    <td><input type="checkbox" name="file[]" value="{{ f.id }}" /></td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        <button class="btn btn-warning">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $('#all-table').DataTable();
+        $('div.dataTables_filter').addClass('col-sm-offset-3');
+        $('.dataTables_wrapper .row:nth-child(3) > div:nth-child(1)').addClass('col-sm-4');
+        $('.dataTables_wrapper .row:nth-child(3) > div:nth-child(2)').addClass('col-sm-8');
+    </script>
+{% endblock %}
