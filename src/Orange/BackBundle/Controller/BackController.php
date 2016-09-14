@@ -324,7 +324,8 @@ class BackController extends Controller
 
         foreach($file as $f){
             if($f->getDateFin() != null){
-                $end = strtotime($f->getDateFin());
+                $dfin = $f->getDateFin()->format('Y-m-d');
+                $end = strtotime($dfin);
                 if($end <= time()){
                     $chkfiles->moveFile($f, $em);
                 }
@@ -355,7 +356,6 @@ class BackController extends Controller
 
             $lien = $file->getLien();
             $ext = substr(strrchr($lien, '.'), 1);
-            $newext = null;
 
             foreach($exts as $e){
                 if($ext == $e->getNom()){
@@ -363,7 +363,7 @@ class BackController extends Controller
                     break;
                 }
             }
-            if($newext == null){
+            if(!isset($newext)){
                 $extension = new Extension;
                 $extension->setNom($ext);
                 $extension->setType($file->getType());

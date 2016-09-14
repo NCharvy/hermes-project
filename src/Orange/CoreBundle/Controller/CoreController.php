@@ -41,4 +41,28 @@ class CoreController extends Controller
             'query' => $query
         ));
     }
+
+    /**
+     * @Route("/api/load_sub_families")
+     */
+    public function loadSubFamiliesAction(Request $request)
+    {
+        if($request->getMethod() == 'POST')
+        {
+            $id = json_decode($request->getContent());
+            $em = $this->getDoctrine()->getManager();
+            $subfam = [];
+            //$scat = $em->getRepository('OrangeBudgetBundle:SousCategorie')->findBy(array("categorie" => $cat));
+
+            $sfam = $em->createQueryBuilder()
+                ->select('sf')
+                ->from('OrangeHomeBundle:SousTypologie', 'sf')
+                ->innerJoin('sf.typologie', 'f')
+                ->where('f.id = ' . $id->idfam)
+                ->getQuery()
+                ->getArrayResult();
+
+            return new Response(json_encode(array("data" => $sfam)));
+        }
+    }
 }

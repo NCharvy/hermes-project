@@ -23,6 +23,14 @@
 	                                </div>
 	                            </div>
 
+	                            <div class="form-group">
+	                                {{ form_label(form.dateFin, "Date de fin", {'label_attr': {'class': 'col-sm-5 control-label'}}) }}
+	                                {{ form_errors(form.dateFin) }}
+	                                <div class="col-sm-6">
+	                                    {{ form_widget(form.dateFin) }}
+	                                </div>
+	                            </div>
+
 								<div class="form-group">
 									{{ form_label(form.typologie, "Famille", {'label_attr': {'class': 'col-sm-5 control-label'}}) }}
 									{{ form_errors(form.typologie) }}

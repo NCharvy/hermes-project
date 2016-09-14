@@ -3,6 +3,7 @@
 {% block title %}Admin - DCR{% endblock %}
 
 {% block content %}
+    {% set type = "soustypologie" %}
     <div class="container">
         <div class="starter-template">
             <h2 style="text-align : center;">Sous-familles</h2>
@@ -25,7 +26,7 @@
                                 <td>{{ st.libelle }}</td>
                                 <td>{{ st.typologie.libelle }}</td>
                                 <td>{{ st.route }}</td>
-                                <td><a href="{{ path('_soustypologie_update', {'id': st.id}) }}"><i class="fa fa-fw fa-pencil"></i></a> <a href="{{ path('_soustypologie_delete', {'id': st.id}) }}"><i class="fa fa-fw fa-trash"></i></a></td>
+                                <td><a href="{{ path('_soustypologie_update', {'id': st.id}) }}"><i class="fa fa-fw fa-pencil"></i></a> <a class="delete-trash" href="" onClick="validateDeletion({{ st.id }}, '{{ type }}')"><i class="fa fa-fw fa-trash"></i></a></td>
                             </tr>
                         {% endfor %}
                         </tbody>

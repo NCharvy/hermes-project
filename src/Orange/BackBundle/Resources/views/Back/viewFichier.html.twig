@@ -3,6 +3,7 @@
 {% block title %}Admin - DCR{% endblock %}
 
 {% block content %}
+    {% set type = "fichier" %}
     <div class="container">
         <div class="starter-template">
             <h2 style="text-align : center;">{% if archivage is defined %}Archives{% else %}Fichiers{% endif %}</h2>
@@ -27,7 +28,7 @@
                                 <td>{% if f.typologie is not null %}{{ f.typologie.libelle }}{% else %}Non{% endif %}</td>
                                 <td>{% if f.soustypologie is not null %}{{ f.soustypologie.libelle }}{% else %}Non{% endif %}</td>
                                 <td>{% if f.type is not null %}{{ f.type.libelle }}{% else %}Non défini{% endif %}</td>
-                                <td><a href="{{ path('_fichier_update', {'id': f.id}) }}"><i class="fa fa-fw fa-pencil"></i></a> <a href="{{ path('_fichier_archive', {'id' : f.id}) }}"><i class="fa fa-floppy-o"></i></a> <a href="{{ path('_fichier_delete', {'id': f.id}) }}"><i class="fa fa-fw fa-trash"></i></a></td>
+                                <td><a href="{{ path('_fichier_update', {'id': f.id}) }}"><i class="fa fa-fw fa-pencil"></i></a> <a href="{{ path('_fichier_archive', {'id' : f.id}) }}"><i class="fa fa-floppy-o"></i></a> <a class="delete-trash" href="" onClick="validateDeletion({{ f.id }}, '{{ type }}')"><i class="fa fa-fw fa-trash"></i></a></td>
                             </tr>
                         {% endfor %}
                         </tbody>

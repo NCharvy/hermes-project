@@ -135,10 +135,10 @@ input:-moz-placeholder{
 @media screen and (min-width : 992px){
   .main-classification{
     max-height : 258px;
-    overflow : hidden !important;
+    overflow : hidden;
   }
   .main-row{
-    margin-bottom : 30px;
+    margin-bottom : 10px;
   }
   .dev{
     color : #222;

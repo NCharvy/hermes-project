@@ -3,6 +3,7 @@
 {% block title %}Admin - DCR{% endblock %}
 
 {% block content %}
+    {% set type = "type" %}
     <div class="container">
         <div class="starter-template">
             <h2 style="text-align : center;">Types de fichiers</h2>
@@ -21,7 +22,7 @@
                             <tr>
                                 <td>{{ t.id }}</td>
                                 <td>{{ t.libelle }}</td>
-                                <td><a href="{{ path('_type_update', {'id': t.id}) }}"><i class="fa fa-fw fa-pencil"></i></a> <a href="{{ path('_type_delete', {'id': t.id}) }}"><i class="fa fa-fw fa-trash"></i></a></td>
+                                <td><a href="{{ path('_type_update', {'id': t.id}) }}"><i class="fa fa-fw fa-pencil"></i></a> <a class="delete-trash" href="" onClick="validateDeletion({{ t.id }}, '{{ type }}')"><i class="fa fa-fw fa-trash"></i></a></td>
                             </tr>
                         {% endfor %}
                         </tbody>

@@ -26,7 +26,7 @@
                                         <option value="{{ t.id }}">{{ t.libelle }}</option>
                                     {% endfor %}
                                 </select>
-                                <select name="fam" id="fam">
+                                <select name="fam" id="fam" onChange="loadSubFamilies(this.value);">
                                     <option selected="selected" value="">-- Sélectionner la famille --</option>
                                     {% for f in fam %}
                                         <option value="{{ f.id }}">{{ f.libelle }}</option>
@@ -35,7 +35,7 @@
                                 <select name="sfam" id="sfam">
                                     <option selected="selected" value="">-- Sélectionner la sous-famille --</option>
                                     {% for sf in sfam %}
-                                        <option value="{{ sf.id }}">{{ sf.libelle }}</option>
+                                        <option value="{{ sf.id }}" class="nouveau">{{ sf.libelle }}</option>
                                     {% endfor %}
                                 </select>
                                 <select name="type" id="type">

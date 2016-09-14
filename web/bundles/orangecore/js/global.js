@@ -22,6 +22,10 @@ $(document).ready(function() {
     $('#search-engine').on('submit', function(e){
         e.preventDefault();
     });
+
+    $('.delete-trash').on('click', function(e){
+        e.preventDefault();
+    });
 });
 
 function showModal(id){
@@ -37,16 +41,32 @@ function developClass(id){
 
     if($c.css('max-height') == '258px'){
         $c.animate({
-            overflow : 'none',
             maxHeight : '100%'
         }, 500);
-        //$c.css('max-height', '100%');
     }
     else{
         $c.animate({
-            overflow : 'auto',
             maxHeight : '258px'
         }, 500);
+    }
+}
+
+function validateDeletion(id = null, type = null, multi = null){
+    if(multi == null){
+        if(confirm('Voulez-vous vraiment supprimer cet élément ?')){
+            window.location = '/back/' + type + '/delete/' + id;
+        }
+        else{
+            return false;
+        }
+    }
+    else{
+        if(confirm('Voulez-vous vraiment supprimer ces fichiers ?')){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
 
@@ -151,6 +171,33 @@ function loadCustomSearch(form){
                     $fileDiv.append($typeDetail);
                     $fileDiv.append($dlLink);
                 }
+            });
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            console.log(XMLHttpRequest + " " + textStatus + " " + errorThrown);
+        },
+    });
+}
+
+function loadSubFamilies(fam) {
+    $.ajax({
+        type: "POST",
+        url: '/api/load_sub_families',
+        data: '{"idfam": ' + fam + '}',
+        async: true,
+        dataType: "json",
+        success: function (response) {
+            var data_subcat = [];
+            var $scat = $('#sfam');
+            if(response.data.length > 0){
+                subfam = response.data;
+            }
+            if($('.nouveau').length > 0){
+                $('.nouveau').remove();
+            }
+            $.each(subfam, function(key, value){
+                var $sc = $('<option class="nouveau" value="'+ subfam[key].id +'">' + subfam[key].libelle + '</option>');
+                $scat.append($sc);
             });
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {

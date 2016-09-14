@@ -17,6 +17,9 @@ class FichierType extends AbstractType
         $builder
             ->add('nom')
             ->add('file', 'file')
+            ->add('dateFin', 'date', array(
+                'required'      =>  false
+            ))
             ->add('typologie', 'entity', array(
                 'class'         =>  'OrangeHomeBundle:Typologie',
                 'property'      =>  'libelle',

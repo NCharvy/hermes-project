@@ -3,6 +3,7 @@
 {% block title %}Admin - DCR{% endblock %}
 
 {% block content %}
+    {% set type = "classification" %}
     <div class="container">
         <div class="starter-template">
             <h2 style="text-align : center;">Thématiques</h2>
@@ -23,7 +24,7 @@
                                 <td>{{ c.id }}</td>
                                 <td>{{ c.libelle }}</td>
                                 <td>{{ c.route }}</td>
-                                <td><a href="{{ path('_classification_update', {'id': c.id}) }}"><i class="fa fa-fw fa-pencil"></i></a> <a href="{{ path('_classification_delete', {'id': c.id}) }}"><i class="fa fa-fw fa-trash"></i></a></td>
+                                <td><a href="{{ path('_classification_update', {'id': c.id}) }}"><i class="fa fa-fw fa-pencil"></i></a> <a class="delete-trash" href="" onClick="validateDeletion({{ c.id }}, '{{ type }}')"><i class="fa fa-fw fa-trash"></i></a></td>
                             </tr>
                         {% endfor %}
                         </tbody>
