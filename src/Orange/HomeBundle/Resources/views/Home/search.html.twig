@@ -63,10 +63,10 @@
                                         <h3>{{ f.nom }}</h3>
                                         {% if f.type.libelle == "Image" %}
                                             <a data-toggle="modal" data-target="#show-image" href="" class="click-image" id="a-click-{{ i }}" onclick="showModal(this.id);">
-                                                <img src="{{ asset('uploads/resources/' ~ f.type.route ~ '/' ~ f.lien) }}" alt="{{ f.nom }}" width="150" />
+                                                <img src="{{ asset('uploads/resources/' ~ f.type.route ~ '/' ~ f.lien) }}" alt="{{ f.nom }}" width="200" />
                                             </a>
                                         {% elseif f.type.libelle == "Document" %}
-                                            <iframe src="{{ asset('uploads/resources/' ~ f.type.route ~ '/' ~ f.lien) }}" width="150"></iframe>
+                                            <iframe src="{{ asset('uploads/resources/' ~ f.type.route ~ '/' ~ f.lien) }}" width="200"></iframe>
                                         {% endif %}
                                         <p style="color : #222 !important;">Type : {{ f.type.libelle }}</p>
                                         <a target="_blank" href="{{ asset('uploads/resources/' ~ f.type.route ~ '/' ~ f.lien) }}">Télécharger le fichier</a>

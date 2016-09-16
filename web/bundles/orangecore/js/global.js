@@ -26,6 +26,10 @@ $(document).ready(function() {
     $('.delete-trash').on('click', function(e){
         e.preventDefault();
     });
+
+    $('.close').on('click', function(){
+        $('.modal').modal('hide');
+    })
 });
 
 function showModal(id){
@@ -62,11 +66,20 @@ function validateDeletion(id = null, type = null, multi = null){
     }
     else{
         if(confirm('Voulez-vous vraiment supprimer ces fichiers ?')){
-            return true;
+            window.location = '/back/archive/release';
         }
         else{
             return false;
         }
+    }
+}
+
+function validateArchiveFile(id){
+    if(confirm('Voulez-vous vraiment archiver ce fichier ?')){
+        window.location = '/back/fichier/archive/' + id;
+    }
+    else{
+        return false;
     }
 }
 
@@ -199,6 +212,34 @@ function loadSubFamilies(fam) {
                 var $sc = $('<option class="nouveau" value="'+ subfam[key].id +'">' + subfam[key].libelle + '</option>');
                 $scat.append($sc);
             });
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            console.log(XMLHttpRequest + " " + textStatus + " " + errorThrown);
+        },
+    });
+}
+
+function loadCreatedArchive() {
+    $.ajax({
+        type: "POST",
+        url: '/api/load_created_archive',
+        async: true,
+        dataType: "json",
+        success: function (response) {
+            $cont = $('#zip');
+            if($('#dl-archive').length > 0){
+                $('#dl-archive').remove();
+            }
+
+            if(response.data.length > 0){
+                archive = response.data;
+
+                $link = $('<a></a>');
+                $link.attr({href : '/uploads/zip/' + archive, id : 'dl-archive', target : '_blank'}).html('Télécharger la sauvegarde');
+                $cont.append($link);
+
+                console.log(archive);
+            }
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
             console.log(XMLHttpRequest + " " + textStatus + " " + errorThrown);

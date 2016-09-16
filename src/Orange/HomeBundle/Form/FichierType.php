@@ -20,7 +20,7 @@ class FichierType extends AbstractType
             ->add('dateFin', 'date', array(
                 'required'      =>  false
             ))
-            ->add('typologie', 'entity', array(
+            /*->add('typologie', 'entity', array(
                 'class'         =>  'OrangeHomeBundle:Typologie',
                 'property'      =>  'libelle',
                 'multiple'      =>  false,
@@ -35,7 +35,7 @@ class FichierType extends AbstractType
                 'expanded'      =>  false,
                 'required'      =>  false,
                 'empty_value'   =>  "Sélectionner la sous-typologie"
-            ))
+            ))*/
             ->add('type', 'entity', array(
                 'class'         =>  'OrangeHomeBundle:Type',
                 'property'      =>  'libelle',

@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use ZipArchive;
 
 class CoreController extends Controller
 {
@@ -63,6 +64,41 @@ class CoreController extends Controller
                 ->getArrayResult();
 
             return new Response(json_encode(array("data" => $sfam)));
+        }
+    }
+
+    /**
+     * @Route("/api/load_created_archive")
+     */
+    public function loadCreatedArchiveAction(Request $request)
+    {
+        if($request->getMethod() == 'POST')
+        {
+            $em = $this->getDoctrine()->getManager();
+            $path = __DIR__ . '/../../../../web/uploads';
+            $name = 'save.zip';
+
+            $files = $em->getRepository('OrangeHomeBundle:Fichier')
+                         ->createQueryBuilder('f')
+                         ->select('f')
+                         ->where('f.archivage = true')
+                         ->getQuery()
+                         ->getResult();
+
+            $zip = new ZipArchive;
+            $zip->open($path . '/zip/' . $name, ZipArchive::CREATE);
+            foreach($files as $f){
+                $zip->addFile($path . '/archives/' . $f->getType()->getRoute() . '/' . $f->getLien());
+            }
+            //var_dump($zip);
+
+            if($zip->open($name, ZipArchive::CREATE) === true){
+                return new Response(json_encode(array("data" => $name)));
+            }
+            else{
+                return new Response($zip);
+            }
+            $zip->close();
         }
     }
 }

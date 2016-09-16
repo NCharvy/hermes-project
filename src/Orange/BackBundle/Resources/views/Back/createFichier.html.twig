@@ -31,21 +31,26 @@
 	                                </div>
 	                            </div>
 
-								<div class="form-group">
-									{{ form_label(form.typologie, "Famille", {'label_attr': {'class': 'col-sm-5 control-label'}}) }}
-									{{ form_errors(form.typologie) }}
-									<div class="col-sm-6">
-										{{ form_widget(form.typologie, {'attr': {'class': 'form-control'}}) }}
-									</div>
-								</div>
-
 	                            <div class="form-group">
-	                                {{ form_label(form.soustypologie, "Sous-famille", {'label_attr': {'class': 'col-sm-5 control-label'}}) }}
-	                                {{ form_errors(form.soustypologie) }}
+	                                <label class="col-sm-5 control-label" for="sfam">Famille</label>
 	                                <div class="col-sm-6">
-	                                    {{ form_widget(form.soustypologie, {'attr': {'class': 'form-control'}}) }}
+	                                    <select id="fam" onChange="loadSubFamilies(this.value);" class="form-control" name="fam">
+	                                        <option selected="selected" value="">Sélectionner la famille</option>
+	                                        {% for f in fam %}
+	                                            <option value="{{ f.id }}">{{ f.libelle }}</option>
+	                                        {% endfor %}
+	                                    </select>
 	                                </div>
 	                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label" for="sfam">Sous-famille</label>
+                                <div class="col-sm-6">
+                                    <select id="sfam" class="form-control" name="sfam">
+                                        <option selected="selected" value="">Sélectionner la sous-famille</option>
+                                    </select>
+                                </div>
+                            </div>
 
 	                            <div class="form-group">
 	                                {{ form_label(form.type, "Type de fichier", {'label_attr': {'class': 'col-sm-5 control-label'}}) }}

@@ -29,7 +29,12 @@
                             {% endfor %}
                             </tbody>
                         </table>
-                        <button class="btn btn-warning">Supprimer</button>
+                        <div class="col-md-3">
+                            <button class="btn btn-warning">Supprimer</button>
+                        </div>
+                        <div id="zip" class="col-md-3 col-md-offset-6">
+                            <p class="btn btn-info" onclick="loadCreatedArchive()">Exporter</p>
+                        </div>
                     </form>
                 </div>
             </div>

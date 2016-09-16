@@ -347,12 +347,26 @@ class BackController extends Controller
         }*/
 
         $file = new Fichier;
+        $em = $this->getDoctrine()->getManager();
         $form = $this->get('form.factory')->create(new FichierType(), $file);
+        $fam = $em->getRepository('OrangeHomeBundle:Typologie')->findAll();
         $typeAction = "Création";
 
         if($form->handleRequest($req)->isValid()){
-            $em = $this->getDoctrine()->getManager();
             $exts = $em->getRepository('OrangeHomeBundle:Extension')->findAll();
+            $f = $req->request->get('fam');
+            $family = $em->getRepository('OrangeHomeBundle:Typologie')->find($f);
+            $sf = $req->request->get('sfam');
+            $sfamily = $em->getRepository('OrangeHomeBundle:SousTypologie')->find($sf);
+
+            if(isset($sfamily) && !empty($sfamily)){
+                $file->setSousTypologie($sfamily);
+            }
+            else{
+                if(isset($family) && !empty($family)){
+                    $file->setTypologie($family);
+                }
+            }
 
             $lien = $file->getLien();
             $ext = substr(strrchr($lien, '.'), 1);
@@ -385,7 +399,7 @@ class BackController extends Controller
             return $this->redirectToRoute('_fichier');
         }
 
-        return array('form' => $form->createView(), 'libelle' => $typeAction);
+        return array('form' => $form->createView(), 'libelle' => $typeAction, 'fam' => $fam);
     }
 
     /**
