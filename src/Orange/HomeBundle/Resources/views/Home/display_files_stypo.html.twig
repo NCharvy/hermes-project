@@ -5,12 +5,12 @@
 {% block content %}
     <div class="container">
         <div class="starter-template">
-            <h1>Fichiers de {{ st.libelle }}</h1>
             <div class="row">
-                <div class="col-md-3">
-                    <a class="btn btn-primary" href="{{ path('_home_flevel', {'route': typo.route}) }}" role="button" style="margin-bottom: 20px;"><i class="icon-circle-arrow-left"></i> Retour</a>
+                <div class="col-md-2" style="margin-top : 60px !important;">
+                    <a class="bouton-retour" href="{{ path('_home_flevel', {'route': typo.route}) }}" role="button"><i class="fa fa-arrow-circle-left"></i> Retour</a>
                 </div>
             </div>
+            <h1 class="head-front">Fichiers de {{ st.libelle }}</h1>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     {% set i = 0 %}

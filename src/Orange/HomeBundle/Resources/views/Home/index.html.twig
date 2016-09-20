@@ -15,7 +15,7 @@
             {% for c in classifications %}
                 {% set i = i + 1 %}
                 <div class="col-md-4 slide" id="parent-class-{{ i }}">
-                    <div class="header-classification" {% if c.visuel is defined %}style="background: url(uploads/visuels/{{ c.visuel }}); background-size : cover; background-position : center;"{% endif %}>
+                    <div class="header-classification" {% if c.visuel is defined %}style="background: url(uploads/visuels/{{ c.visuel }}) no-repeat center; background-size : cover;"{% endif %}>
                         <h2>{{ c.libelle }}, <br /> {{ c.description }}</h2>
                     </div>
                     <div class="main-classification" id="class-{{ i }}">
@@ -52,10 +52,10 @@
     {{ parent() }}
     <script type="text/javascript" src="{{ asset('bundles/orangecore/lib/jquery.bxslider/jquery.bxslider.min.js') }}"></script>
     <script type="text/javascript">
-        $(document).ready(function(){
+        jQuery(document).ready(function(){
             if("matchMedia" in window){
                 if(window.matchMedia("(min-width : 1200px)").matches){
-                    $('.slider1').bxSlider({
+                    jQuery('.slider1').bxSlider({
                         slideWidth : 390,
                         minSlides : 1,
                         maxSlides : 3
@@ -63,7 +63,7 @@
                     console.log('1200 !');
                 }
                 else if(window.matchMedia("(min-width : 992px)").matches){
-                    $('.slider1').bxSlider({
+                    jQuery('.slider1').bxSlider({
                         slideWidth : 322,
                         minSlides : 1,
                         maxSlides : 3

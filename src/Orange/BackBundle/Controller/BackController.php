@@ -353,7 +353,6 @@ class BackController extends Controller
         $typeAction = "Création";
 
         if($form->handleRequest($req)->isValid()){
-            $exts = $em->getRepository('OrangeHomeBundle:Extension')->findAll();
             $f = $req->request->get('fam');
             $family = $em->getRepository('OrangeHomeBundle:Typologie')->find($f);
             $sf = $req->request->get('sfam');
@@ -368,27 +367,6 @@ class BackController extends Controller
                 }
             }
 
-            $lien = $file->getLien();
-            $ext = substr(strrchr($lien, '.'), 1);
-
-            foreach($exts as $e){
-                if($ext == $e->getNom()){
-                    $newext = $e->getNom();
-                    break;
-                }
-            }
-            if(!isset($newext)){
-                $extension = new Extension;
-                $extension->setNom($ext);
-                $extension->setType($file->getType());
-
-                $em->persist($extension);
-                $em->flush();
-            }
-
-            $extFile = $em->getRepository('OrangeHomeBundle:Extension')->findOneBy(array('nom' => $ext));
-
-            $file->setExtension($extFile);
             $file->setDate(new \DateTime());
             $file->setArchivage(false);
             $em->persist($file);
@@ -531,6 +509,15 @@ class BackController extends Controller
      */
     public function viewArchiveAction()
     {
+        $pathzip = __DIR__ . '/../../../../web/uploads/zip';
+        $dirzip = dir($pathzip);
+        while(false !== ($entry = $dirzip->read())){
+            if($entry != '..' && $entry != '.'){
+                unlink($pathzip . '/' . $entry);
+            }
+        }
+        $dirzip->close();
+
         $em = $this->getDoctrine()->getManager();
         $file = $em->getRepository('OrangeHomeBundle:Fichier')
                     ->createQueryBuilder('f')

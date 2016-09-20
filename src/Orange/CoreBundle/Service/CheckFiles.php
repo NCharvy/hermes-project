@@ -141,6 +141,39 @@ class CheckFiles
     }
 
     /**
+    * Partie extensions de fichiers
+    */
+
+    public function attributeExtension(Fichier $file, EntityManager $em){
+        $exts = $em->getRepository('OrangeHomeBundle:Extension')->findAll();
+
+        $lien = $file->getLien();
+        $ext = substr(strrchr($lien, '.'), 1);
+
+        foreach($exts as $e){
+            if($ext == $e->getNom()){
+                $newext = $e->getNom();
+                break;
+            }
+        }
+        if(!isset($newext)){
+            $extension = new Extension;
+            $extension->setNom($ext);
+            $extension->setType($file->getType());
+
+            $em->persist($extension);
+            $em->flush();
+        }
+
+        $file->setExtension($extFile);
+
+        $extFile = $em->getRepository('OrangeHomeBundle:Extension')->findOneBy(array('nom' => $ext));
+
+        return $extFile;
+    }
+
+
+    /**
     * Getters et Setters
     */
 

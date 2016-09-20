@@ -75,7 +75,7 @@ class CoreController extends Controller
         if($request->getMethod() == 'POST')
         {
             $em = $this->getDoctrine()->getManager();
-            $path = __DIR__ . '/../../../../web/uploads';
+            $path = __DIR__ . '../../../../../web/uploads';
             $name = 'save.zip';
 
             $files = $em->getRepository('OrangeHomeBundle:Fichier')
@@ -86,17 +86,18 @@ class CoreController extends Controller
                          ->getResult();
 
             $zip = new ZipArchive;
-            $zip->open($path . '/zip/' . $name, ZipArchive::CREATE);
+            $zip->open($path . '/zip/' . $name, ZipArchive::OVERWRITE);
             foreach($files as $f){
-                $zip->addFile($path . '/archives/' . $f->getType()->getRoute() . '/' . $f->getLien());
+                $absolpath = $path . '/archives/' . $f->getType()->getRoute() . '/' . $f->getLien();
+                $relatpath = 'archives/' . $f->getType()->getRoute() . '/' . $f->getLien();
+                $zip->addFile($absolpath, $relatpath);
             }
-            //var_dump($zip);
 
-            if($zip->open($name, ZipArchive::CREATE) === true){
+            if($zip->open($path . '/zip/' . $name)){
                 return new Response(json_encode(array("data" => $name)));
             }
             else{
-                return new Response($zip);
+                return new Response('Erreur !');
             }
             $zip->close();
         }

@@ -1,6 +1,7 @@
 /**
  * Created by nythe on 28/07/16.
  */
+
 $(document).ready(function() {
     var $class = $('.main-classification');
     $class.each(function(){
@@ -100,7 +101,13 @@ function loadCustomSearch(form){
         data: $form,
         async: true,
         dataType: "json",
+        beforeSend: function(){
+            $load = $('<img />');
+            $load.attr({src : '/uploads/visuels/load.gif', id : 'load-gif'});
+            $('#result-custom').append($load);
+        },
         success: function (response) {
+            $('#load-gif').remove();
             if(response.query.length > 0){
                 custom = response.query;
             }
@@ -225,6 +232,11 @@ function loadCreatedArchive() {
         url: '/api/load_created_archive',
         async: true,
         dataType: "json",
+        beforeSend: function(){
+            $load = $('<img />');
+            $load.attr({src : '/uploads/visuels/load.gif'});
+            $('#zip').append($load);
+        },
         success: function (response) {
             $cont = $('#zip');
             if($('#dl-archive').length > 0){

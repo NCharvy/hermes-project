@@ -8,12 +8,12 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="row">
-                        <div class="col-md-3" style="margin-left : -4%;">
-                            <a class="btn btn-primary" style="font-size : 1.2em; margin-bottom : 15px;" href="{{ path('_home') }}" role="button" style="margin-bottom: 20px;"><i class="icon-circle-arrow-left"></i> Retour</a>
+                        <div class="col-md-3" style="margin-left : -2%; margin-bottom : 35px !important; margin-top : 40px !important;">
+                            <a class="bouton-retour" href="{{ path('_home') }}" role="button"><i class="fa fa-arrow-circle-left"></i> Retour</a>
                         </div>
                     </div>
                     <div class="heading-typo">
-                        <h1>Dossiers de {{ t.libelle }}</h1>
+                        <h1 class="head-front">Dossiers de {{ t.libelle }}</h1>
                     </div>
                     <ul class="list-group typologie">
                         {% for st in stypos %}

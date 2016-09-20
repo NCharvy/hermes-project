@@ -17,6 +17,9 @@ class HomeController extends Controller
      */
     public function indexAction()
     {
+        $session = $this->getRequest()->getSession();
+        $session->clear();
+
         $em = $this->getDoctrine()->getManager();
         $classifications = $em->getRepository("OrangeHomeBundle:Classification")->findAll();
         return $this->render('OrangeHomeBundle:Home:index.html.twig', array(
@@ -29,6 +32,9 @@ class HomeController extends Controller
      */
     public function displayFilesTypoAction($id)
     {
+        $session = $this->getRequest()->getSession();
+        $session->clear();
+
         $em = $this->getDoctrine()->getManager();
         $typo = $em->getRepository("OrangeHomeBundle:Typologie")->find($id);
         $files = $em->getRepository("OrangeHomeBundle:Fichier")->findBy(array('typologie' => $id));
@@ -44,6 +50,9 @@ class HomeController extends Controller
      */
     public function displayTypoAction($route)
     {
+        $session = $this->getRequest()->getSession();
+        $session->clear();
+
         $em = $this->getDoctrine()->getManager();
         $t = $em->getRepository("OrangeHomeBundle:Typologie")->findOneBy(array('route' => $route));
         $stypos = $em->getRepository("OrangeHomeBundle:SousTypologie")->findBy(array('typologie' => $t->getId()));
@@ -58,6 +67,9 @@ class HomeController extends Controller
      */
     public function displayFilesStypoAction($id)
     {
+        $session = $this->getRequest()->getSession();
+        $session->clear();
+
         $em = $this->getDoctrine()->getManager();
         $st = $em->getRepository("OrangeHomeBundle:SousTypologie")->find($id);
         $typo = $st->getTypologie();

@@ -1,0 +1,13 @@
+{% extends "OrangeCoreBundle::layout.html.twig" %}
+
+{% block title %}404 - Ressource non trouvée{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row" style="text-align : center;">
+        	<h1 style="color : #000 !important">404 error</h1>
+			<p style="color : #000 !important">La ressource n'a pas été trouvée sur le site. Veuillez retourner à la page d'accueil.</p>
+			<a class="btn btn-warning" href="{{ path('_back') }}">Retour</a>
+        </div>
+    </div>
+{% endblock %}
