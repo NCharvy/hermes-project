@@ -40,16 +40,9 @@ class Fichier
     /**
      *
      * @ORM\ManyToOne(targetEntity="Orange\HomeBundle\Entity\Type", inversedBy="fichiers")
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\JoinColumn(nullable=false)
      */
     private $type;
-
-    /**
-     *
-     * @ORM\ManyToOne(targetEntity="Orange\HomeBundle\Entity\Extension")
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $extension;
 
     /**
      * @var UploadedFile
@@ -258,6 +251,12 @@ class Fichier
         return __DIR__ . '/../../../../web/' . $this->getUploadDir();
     }
 
+    public function getArchiveDir(){
+        $dir = "uploads/archives/" . $this->getType()->getRoute();
+
+        return $dir;
+    }
+
     public function getUploadDir()
     {
         $dir = "uploads/resources/" . $this->getType()->getRoute();
@@ -337,29 +336,6 @@ class Fichier
     public function getType()
     {
         return $this->type;
-    }
-
-    /**
-     * Set extension
-     *
-     * @param \Orange\HomeBundle\Entity\Extension $extension
-     * @return Fichier
-     */
-    public function setExtension(\Orange\HomeBundle\Entity\Extension $extension = null)
-    {
-        $this->extension = $extension;
-
-        return $this;
-    }
-
-    /**
-     * Get extension
-     *
-     * @return \Orange\HomeBundle\Entity\Extension 
-     */
-    public function getExtension()
-    {
-        return $this->extension;
     }
 
     /**

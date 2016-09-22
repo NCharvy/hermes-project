@@ -19,21 +19,15 @@ class FichierUpType extends AbstractType
             ->add('file', 'file', array(
                 'required'  =>  false
             ))
-            ->add('typologie', 'entity', array(
-                'class'         =>  'OrangeHomeBundle:Typologie',
-                'property'      =>  'libelle',
-                'multiple'      =>  false,
-                'expanded'      =>  false,
-                'required'      =>  false,
-                'empty_value'   =>  "Sélectionner la typologie"
+            ->add('dateFin', 'date', array(
+                'required'      =>  false
             ))
-            ->add('soustypologie', 'entity', array(
-                'class'         =>  'OrangeHomeBundle:SousTypologie',
+            ->add('type', 'entity', array(
+                'class'         =>  'OrangeHomeBundle:Type',
                 'property'      =>  'libelle',
                 'multiple'      =>  false,
                 'expanded'      =>  false,
-                'required'      =>  false,
-                'empty_value'   =>  "Sélectionner la sous-typologie"
+                'empty_value'   =>  "Sélectionner le type de fichier"
             ))
             ->add('enregistrer', 'submit')
         ;

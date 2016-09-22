@@ -22,7 +22,7 @@ class TypologieType extends AbstractType
                 'property'      =>  'libelle',
                 'multiple'      =>  false,
                 'expanded'      =>  false,
-                'empty_value'   =>  "Sélectionner la classification"
+                'empty_value'   =>  "Sélectionner la thématique"
             ))
             ->add('enregistrer', 'submit')
         ;

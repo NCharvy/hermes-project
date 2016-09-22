@@ -20,22 +20,6 @@ class FichierType extends AbstractType
             ->add('dateFin', 'date', array(
                 'required'      =>  false
             ))
-            /*->add('typologie', 'entity', array(
-                'class'         =>  'OrangeHomeBundle:Typologie',
-                'property'      =>  'libelle',
-                'multiple'      =>  false,
-                'expanded'      =>  false,
-                'required'      =>  false,
-                'empty_value'   =>  "Sélectionner la typologie"
-            ))
-            ->add('soustypologie', 'entity', array(
-                'class'         =>  'OrangeHomeBundle:SousTypologie',
-                'property'      =>  'libelle',
-                'multiple'      =>  false,
-                'expanded'      =>  false,
-                'required'      =>  false,
-                'empty_value'   =>  "Sélectionner la sous-typologie"
-            ))*/
             ->add('type', 'entity', array(
                 'class'         =>  'OrangeHomeBundle:Type',
                 'property'      =>  'libelle',

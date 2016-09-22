@@ -130,14 +130,22 @@ class CheckFiles
     public function moveFile(Fichier $file, EntityManager $em)
     {
         $file->setArchivage(true);
-                
+
+        $name = $file->getLien();
+
+        $oldFile = __DIR__ . '/../../../../web/uploads/resources/' . $file->getType()->getRoute() . '/' . $name;
+        $newDir = __DIR__ . '/../../../../web/uploads/archives/' . $file->getType()->getRoute();
+        if(file_exists($newDir . '/' . $name)){
+            $ch = explode(".", $name);
+            $name = $ch[0] . " (copie)." . $ch[1];
+            $file->setLien($name);
+        }
+
+        $newFile = $newDir . '/' . $name;
+        rename($oldFile, $newFile);
+
         $em->persist($file);
         $em->flush();
-
-        $oldFile = __DIR__ . '/../../../../web/uploads/resources/' . $file->getType()->getRoute() . '/' . $file->getLien();
-        $newFile = __DIR__ . '/../../../../web/uploads/archives/' . $file->getType()->getRoute() . '/' . $file->getLien();
-
-        rename($oldFile, $newFile);
     }
 
     /**

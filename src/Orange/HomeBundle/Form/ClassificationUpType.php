@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class SousTypologieType extends AbstractType
+class ClassificationUpType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -16,12 +16,9 @@ class SousTypologieType extends AbstractType
     {
         $builder
             ->add('libelle')
-            ->add('typologie', 'entity', array(
-                'class'         =>  'OrangeHomeBundle:Typologie',
-                'property'      =>  'libelle',
-                'multiple'      =>  false,
-                'expanded'      =>  false,
-                'empty_value'   =>  "Sélectionner la famille"
+            ->add('description')
+            ->add('image', 'file', array(
+                'required' => false
             ))
             ->add('enregistrer', 'submit')
         ;
@@ -33,7 +30,7 @@ class SousTypologieType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Orange\HomeBundle\Entity\SousTypologie'
+            'data_class' => 'Orange\HomeBundle\Entity\Classification'
         ));
     }
 }

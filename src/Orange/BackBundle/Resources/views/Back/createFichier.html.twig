@@ -35,7 +35,10 @@
 	                                <label class="col-sm-5 control-label" for="sfam">Famille</label>
 	                                <div class="col-sm-6">
 	                                    <select id="fam" onChange="loadSubFamilies(this.value);" class="form-control" name="fam">
-	                                        <option selected="selected" value="">Sélectionner la famille</option>
+	                                        <option value="">Sélectionner la famille</option>
+											{% if fileFamille is not null %}
+												<option selected="selected" value="{{ fileFamille.id }}">{{ fileFamille.libelle }}</option>
+											{% endif %}
 	                                        {% for f in fam %}
 	                                            <option value="{{ f.id }}">{{ f.libelle }}</option>
 	                                        {% endfor %}
@@ -47,7 +50,10 @@
                                 <label class="col-sm-5 control-label" for="sfam">Sous-famille</label>
                                 <div class="col-sm-6">
                                     <select id="sfam" class="form-control" name="sfam">
-                                        <option selected="selected" value="">Sélectionner la sous-famille</option>
+                                        <option value="">Sélectionner la sous-famille</option>
+										{% if fileSfamille is not null %}
+											<option class="nouveau" selected="selected" value="{{ fileSfamille.id }}">{{ fileSfamille.libelle }}</option>
+										{% endif %}
                                     </select>
                                 </div>
                             </div>
@@ -64,6 +70,9 @@
 	                                {{ form_label(form.file, "Fichier", {'label_attr': {'class': 'col-sm-5 control-label'}}) }}
 	                                {{ form_errors(form.file) }}
 	                                <div class="col-sm-6">
+										{% if lien is defined %}
+											<p>Fichier d'origine : <a href="{{ asset('uploads/resources/' ~ route ~ '/' ~ lien) }}" target="_blank">{{ lien }}</a></p>
+										{% endif %}
 	                                    {{ form_widget(form.file) }}
 	                                </div>
 	                            </div>

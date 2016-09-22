@@ -24,7 +24,7 @@ class Typologie
     /**
      *
      * @ORM\ManyToOne(targetEntity="Orange\HomeBundle\Entity\Classification", inversedBy="typologies")
-     * @ORM\JoinColumn(referencedColumnName="id", nullable=true)
+     * @ORM\JoinColumn(referencedColumnName="id", nullable=false)
      */
     private $classification;
 

@@ -40,16 +40,16 @@ class Fichier
     /**
      *
      * @ORM\ManyToOne(targetEntity="Orange\HomeBundle\Entity\Type", inversedBy="fichiers")
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\JoinColumn(nullable=false)
      */
     private $type;
 
-    /**
+    /*
      *
      * @ORM\ManyToOne(targetEntity="Orange\HomeBundle\Entity\Extension")
      * @ORM\JoinColumn(nullable=true)
      */
-    private $extension;
+    //private $extension;
 
     /**
      * @var UploadedFile
@@ -218,6 +218,8 @@ class Fichier
      */
     public function upload()
     {
+        $add = $this->lien;
+
         if(null === $this->file){
             return;
         }
@@ -229,9 +231,13 @@ class Fichier
             }
         }
 
+        if(file_exists($this->getUploadRootDir() . '/' . $this->lien)){
+            $ch = explode(".", $this->lien);
+            $add = $ch[0] . " (copie)." . $ch[1];
+        }
         $this->file->move(
             $this->getUploadRootDir(),
-            $this->lien
+            $add
         );
     }
 
@@ -343,29 +349,6 @@ class Fichier
     public function getType()
     {
         return $this->type;
-    }
-
-    /**
-     * Set extension
-     *
-     * @param \Orange\HomeBundle\Entity\Extension $extension
-     * @return Fichier
-     */
-    public function setExtension(\Orange\HomeBundle\Entity\Extension $extension = null)
-    {
-        $this->extension = $extension;
-
-        return $this;
-    }
-
-    /**
-     * Get extension
-     *
-     * @return \Orange\HomeBundle\Entity\Extension 
-     */
-    public function getExtension()
-    {
-        return $this->extension;
     }
 
     /**

@@ -17,6 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Orange\HomeBundle\Form\ClassificationType;
+use Orange\HomeBundle\Form\ClassificationUpType;
 use Orange\HomeBundle\Form\FichierType;
 use Orange\HomeBundle\Form\FichierUpType;
 use Orange\HomeBundle\Form\TypeType;
@@ -112,7 +113,7 @@ class BackController extends Controller
         $class = $em->getRepository('OrangeHomeBundle:Classification')->find($id);
         $typeAction = "Modification";
 
-        $form = $this->get('form.factory')->create(new ClassificationType(), $class);
+        $form = $this->get('form.factory')->create(new ClassificationUpType(), $class);
 
         if($form->handleRequest($req)->isValid()){
             $em->persist($class);
@@ -123,7 +124,11 @@ class BackController extends Controller
             return $this->redirectToRoute('_classification');
         }
 
-        return array('form' => $form->createView(), 'libelle' => $typeAction);
+        return array(
+            'form' => $form->createView(), 
+            'libelle' => $typeAction,
+            'visuel' => $class->getVisuel()
+            );
     }
 
     /**
@@ -388,11 +393,26 @@ class BackController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $file = $em->getRepository('OrangeHomeBundle:Fichier')->find($id);
+        $fam = $em->getRepository('OrangeHomeBundle:Typologie')->findAll();
         $typeAction = "Modification";
 
         $form = $this->get('form.factory')->create(new FichierUpType(), $file);
 
         if($form->handleRequest($req)->isValid()){
+            $f = $req->request->get('fam');
+            $family = $em->getRepository('OrangeHomeBundle:Typologie')->find($f);
+            $sf = $req->request->get('sfam');
+            $sfamily = $em->getRepository('OrangeHomeBundle:SousTypologie')->find($sf);
+
+            if(isset($sfamily) && !empty($sfamily)){
+                $file->setSousTypologie($sfamily);
+            }
+            else{
+                if(isset($family) && !empty($family)){
+                    $file->setTypologie($family);
+                }
+            }
+
             $em->persist($file);
             $em->flush();
 
@@ -401,7 +421,15 @@ class BackController extends Controller
             return $this->redirectToRoute('_fichier');
         }
 
-        return array('form' => $form->createView(), 'libelle' => $typeAction);
+        return array(
+            'form' => $form->createView(),
+            'libelle' => $typeAction,
+            'fam' => $fam,
+            'route' => $file->getType()->getRoute(),
+            'lien' => $file->getLien(),
+            'fileFamille' => $file->getTypologie(),
+            'fileSfamille' => $file->getSousTypologie()
+        );
     }
 
     /**

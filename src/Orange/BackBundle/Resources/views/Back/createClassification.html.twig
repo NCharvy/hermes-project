@@ -35,6 +35,9 @@
 	                                {{ form_label(form.image, "Visuel", {'label_attr': {'class': 'col-sm-5 control-label'}}) }}
 	                                {{ form_errors(form.image) }}
 	                                <div class="col-sm-6">
+										{% if visuel is defined %}
+											<p>Fichier d'origine : <a href="{{ asset('uploads/visuels/' ~ visuel) }}" target="_blank">{{ visuel }}</a></p>
+										{% endif %}
 	                                    {{ form_widget(form.image) }}
 	                                </div>
 	                            </div>

@@ -16,7 +16,7 @@
                 {% set i = i + 1 %}
                 <div class="col-md-4 slide" id="parent-class-{{ i }}">
                     <div class="header-classification" {% if c.visuel is defined %}style="background: url(uploads/visuels/{{ c.visuel }}) no-repeat center; background-size : cover;"{% endif %}>
-                        <h2>{{ c.libelle }}, <br /> {{ c.description }}</h2>
+                        <h2>{{ c.libelle }}, <br /> {% if c.description is defined %}{{ c.description }}{% endif %}</h2>
                     </div>
                     <div class="main-classification" id="class-{{ i }}">
                         <ul class="list-group classification">
