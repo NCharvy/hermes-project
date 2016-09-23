@@ -57,13 +57,6 @@ class Typologie
     private $route;
 
     /**
-     * @var bool
-     *
-     * @ORM\Column(name="sublevel", type="boolean", nullable=true)
-     */
-    private $sublevel;
-
-    /**
      * Get id
      *
      * @return integer 
@@ -142,28 +135,6 @@ class Typologie
         return $this->classification;
     }
 
-    /**
-     * Set sublevel
-     *
-     * @param boolean $sublevel
-     * @return Typologie
-     */
-    public function setSublevel($sublevel)
-    {
-        $this->sublevel = $sublevel;
-
-        return $this;
-    }
-
-    /**
-     * Get sublevel
-     *
-     * @return boolean 
-     */
-    public function getSublevel()
-    {
-        return $this->sublevel;
-    }
     /**
      * Constructor
      */

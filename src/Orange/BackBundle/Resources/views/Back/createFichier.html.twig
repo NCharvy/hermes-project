@@ -6,7 +6,7 @@
     <div class="container">
         <div class="starter-template">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-8 col-md-offset-1 col-lg-offset-2">
 	                <div class="panel panel-default">
 	                    <div class="panel-heading">
 	                        <h2 style="text-align : center;">{{ libelle }} de fichier</h2>
@@ -36,7 +36,7 @@
 	                                <div class="col-sm-6">
 	                                    <select id="fam" onChange="loadSubFamilies(this.value);" class="form-control" name="fam">
 	                                        <option value="">Sélectionner la famille</option>
-											{% if fileFamille is not null %}
+											{% if fileFamille is defined and fileFamille is not null %}
 												<option selected="selected" value="{{ fileFamille.id }}">{{ fileFamille.libelle }}</option>
 											{% endif %}
 	                                        {% for f in fam %}
@@ -51,7 +51,7 @@
                                 <div class="col-sm-6">
                                     <select id="sfam" class="form-control" name="sfam">
                                         <option value="">Sélectionner la sous-famille</option>
-										{% if fileSfamille is not null %}
+										{% if fileSfamille is defined and fileSfamille is not null %}
 											<option class="nouveau" selected="selected" value="{{ fileSfamille.id }}">{{ fileSfamille.libelle }}</option>
 										{% endif %}
                                     </select>

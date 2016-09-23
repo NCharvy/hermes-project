@@ -21,18 +21,14 @@
                     <div class="main-classification" id="class-{{ i }}">
                         <ul class="list-group classification">
                         {% for t in c.typologies %}
-                            {% if t.sublevel == false %}
+                            {% if t.soustypologies|length > 0 %}
+                                <li class="list-group-item"><a href="{{ path('_home_flevel', {'route': t.route}) }}">{{ t.libelle }}</a></li>
+                            {% else %}
                                 {% if t.fichiers|length > 0 %}
                                     <li class="list-group-item"><a href="{{ path('_show_files', {'id': t.id}) }}">{{ t.libelle }}</a></li>
                                 {% else %}
-                                    <li class="list-group-item inactive-item">{{ t.libelle }}</li>
+                                <li class="list-group-item inactive-item">{{ t.libelle }}</li>
                                 {% endif %}
-                            {% else %}
-                                {% if t.soustypologies|length > 0 %}
-                                    <li class="list-group-item"><a href="{{ path('_home_flevel', {'route': t.route}) }}">{{ t.libelle }}</a></li>
-                                {% else %}
-                                    <li class="list-group-item inactive-item">{{ t.libelle }}</li>
-                                {% endif %} 
                             {% endif %}
                         {% endfor %}
                         </ul>

@@ -75,6 +75,8 @@ class CoreController extends Controller
         if($request->getMethod() == 'POST')
         {
             $em = $this->getDoctrine()->getManager();
+            $json = json_decode($request->getContent());
+
             $path = __DIR__ . '../../../../../web/uploads';
             $name = 'save.zip';
 
@@ -92,6 +94,15 @@ class CoreController extends Controller
                 $relatpath = 'archives/' . $f->getType()->getRoute() . '/' . $f->getLien();
                 $zip->addFile($absolpath, $relatpath);
             }
+            $zip->close();
+
+            if($json->del == 1){
+                foreach($files as $f){
+                    unlink(__DIR__ . '/../../../../web/uploads/archives/' . $f->getType()->getRoute() . '/' . $f->getLien());
+                    $em->remove($f);
+                }
+                $em->flush();
+            }
 
             if($zip->open($path . '/zip/' . $name)){
                 return new Response(json_encode(array("data" => $name)));
@@ -99,7 +110,6 @@ class CoreController extends Controller
             else{
                 return new Response('Erreur !');
             }
-            $zip->close();
         }
     }
 }

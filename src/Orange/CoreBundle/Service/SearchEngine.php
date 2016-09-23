@@ -21,12 +21,12 @@ class SearchEngine
             }
         }
         if(!empty($fam)){
-            $join .= "JOIN f.typologie fa ";
+            $join .= "JOIN f.typologie fa";
             if(!empty($add)){
-                $add .= " AND fa.id = $fam";
+                $add .= " AND fa.id = $fam AND fam.id = $fam";
             }
             else{
-                $add .= "fa.id = $fam";
+                $add .= "fa.id = $fam AND fam.id = $fam";
             }
         }
         if(!empty($thema)){
@@ -68,7 +68,9 @@ class SearchEngine
         }
         $file = $em->createQuery($dql);
         $query = $file->getArrayResult();
-   
+
+        //echo $dql;
+
         return $query;
     }
 

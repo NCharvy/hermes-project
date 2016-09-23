@@ -2,19 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfcf50a4-9506-4463-9319-2bbb96da5782" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Orange/HomeBundle/Form/ClassificationUpType.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/archives/document/CHARVY_candidature_emploi_LP_2015.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/archives/document/programme-42.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/archives/image/bhW5KUg (copie).png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/archives/image/bhW5KUg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/archives/image/mockup_admin.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Controller/BackController.php" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Controller/BackController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createClassification.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createClassification.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createFichier.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createFichier.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createSousTypologie.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createSousTypologie.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createType.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createType.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createTypologie.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createTypologie.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/index.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/releaseFichier.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/releaseFichier.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewClassification.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewClassification.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewFichier.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewFichier.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewSousTypologie.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewSousTypologie.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewType.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewType.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewTypologie.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewTypologie.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/CoreBundle/Controller/CoreController.php" afterPath="$PROJECT_DIR$/src/Orange/CoreBundle/Controller/CoreController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/foot.html.twig" afterPath="$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/foot.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/CoreBundle/Service/CheckFiles.php" afterPath="$PROJECT_DIR$/src/Orange/CoreBundle/Service/CheckFiles.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/CoreBundle/Service/SearchEngine.php" afterPath="$PROJECT_DIR$/src/Orange/CoreBundle/Service/SearchEngine.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/HomeBundle/Entity/Fichier.php" afterPath="$PROJECT_DIR$/src/Orange/HomeBundle/Entity/Fichier.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/HomeBundle/Entity/Typologie.php" afterPath="$PROJECT_DIR$/src/Orange/HomeBundle/Entity/Typologie.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/HomeBundle/Form/FichierType.php" afterPath="$PROJECT_DIR$/src/Orange/HomeBundle/Form/FichierType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/HomeBundle/Form/FichierUpType.php" afterPath="$PROJECT_DIR$/src/Orange/HomeBundle/Form/FichierUpType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/HomeBundle/Form/SousTypologieType.php" afterPath="$PROJECT_DIR$/src/Orange/HomeBundle/Form/SousTypologieType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/HomeBundle/Form/TypologieType.php" afterPath="$PROJECT_DIR$/src/Orange/HomeBundle/Form/TypologieType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/index.html.twig" afterPath="$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/bundles/orangecore/js/global.js" afterPath="$PROJECT_DIR$/web/bundles/orangecore/js/global.js" />
     </list>
     <ignored path="projet_hermes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,53 +51,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BackController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Controller/BackController.php">
+      <file leaf-file-name="global.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/bundles/orangecore/js/global.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.074074">
-              <caret line="430" column="54" selection-start-line="430" selection-start-column="54" selection-end-line="430" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="266" column="7" selection-start-line="266" selection-start-column="7" selection-end-line="266" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="display_files_typo.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/display_files_typo.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.407408">
+              <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="releaseFichier.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/releaseFichier.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.700831">
+              <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
               <folding>
-                <element signature="e#48#92#0#PHP" expanded="true" />
+                <element signature="e#2449#2477#0#HTML" expanded="true" />
+                <element signature="e#2617#2646#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createFichier.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createFichier.html.twig">
+      <file leaf-file-name="BackController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Controller/BackController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75757575">
-              <caret line="54" column="76" selection-start-line="54" selection-start-column="76" selection-end-line="54" selection-end-column="76" />
+            <state vertical-scroll-proportion="319.92593">
+              <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CheckFiles.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Orange/CoreBundle/Service/CheckFiles.php">
+      <file leaf-file-name="CoreController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Orange/CoreBundle/Controller/CoreController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.333333">
-              <caret line="138" column="38" selection-start-line="138" selection-start-column="38" selection-end-line="138" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Fichier.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Entity/Fichier.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.62963">
-              <caret line="235" column="17" selection-start-line="235" selection-start-column="17" selection-end-line="235" selection-end-column="17" />
+            <state vertical-scroll-proportion="-13.407408">
+              <caret line="100" column="63" selection-start-line="100" selection-start-column="63" selection-end-line="100" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -110,44 +126,49 @@
         <option value="$PROJECT_DIR$/src/Orange/SecurityBundle/Controller/SecurityController.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
-        <option value="$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/foot.html.twig" />
         <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/index.html.twig" />
         <option value="$PROJECT_DIR$/web/bundles/orangeback/css/sb-admin.css" />
         <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/display_typo.html.twig" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/web/bundles/orangecore/css/starter.css" />
         <option value="$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/login-base.html.twig" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewFichier.html.twig" />
         <option value="$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/back-base.html.twig" />
-        <option value="$PROJECT_DIR$/web/bundles/orangecore/js/global.js" />
         <option value="$PROJECT_DIR$/src/Orange/SecurityBundle/Resources/views/Security/login.html.twig" />
         <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/display_files_stypo.html.twig" />
         <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/display_files_typo.html.twig" />
         <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Controller/HomeController.php" />
         <option value="$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/search.html.twig" />
-        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewTypologie.html.twig" />
-        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewSousTypologie.html.twig" />
-        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createTypologie.html.twig" />
-        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createSousTypologie.html.twig" />
-        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewClassification.html.twig" />
         <option value="$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/web/bundles/orangecore/css/starter-template.css" />
-        <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Entity/Typologie.php" />
         <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Form/ClassificationType.php" />
         <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Form/ClassificationUpType.php" />
         <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Form/FichierUpType.php" />
-        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createClassification.html.twig" />
-        <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Form/TypologieType.php" />
         <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Form/SousTypologieType.php" />
         <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Form/FichierType.php" />
-        <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Entity/Fichier.php" />
-        <option value="$PROJECT_DIR$/src/Orange/CoreBundle/Service/CheckFiles.php" />
+        <option value="$PROJECT_DIR$/src/Orange/CoreBundle/Service/SearchEngine.php" />
         <option value="$PROJECT_DIR$/src/Orange/BackBundle/Controller/BackController.php" />
+        <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Entity/Typologie.php" />
+        <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Form/TypologieType.php" />
+        <option value="$PROJECT_DIR$/src/Orange/CoreBundle/Service/CheckFiles.php" />
+        <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Entity/Fichier.php" />
+        <option value="$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/foot.html.twig" />
+        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewTypologie.html.twig" />
+        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewType.html.twig" />
+        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createType.html.twig" />
+        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createClassification.html.twig" />
         <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createFichier.html.twig" />
+        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewClassification.html.twig" />
+        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewFichier.html.twig" />
+        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewSousTypologie.html.twig" />
+        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createSousTypologie.html.twig" />
+        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createTypologie.html.twig" />
+        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/index.html.twig" />
+        <option value="$PROJECT_DIR$/web/bundles/orangecore/js/global.js" />
+        <option value="$PROJECT_DIR$/src/Orange/CoreBundle/Controller/CoreController.php" />
+        <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/releaseFichier.html.twig" />
       </list>
     </option>
   </component>
@@ -162,9 +183,9 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="1375" />
-    <option name="height" value="876" />
+    <option name="height" value="904" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -191,6 +212,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -285,77 +307,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="projet_hermes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="projet_hermes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Orange" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BackBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Back" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="projet_hermes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="projet_hermes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Orange" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BackBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
+              <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -417,10 +374,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1375" height="876" extended-state="6" />
+    <frame x="65" y="-4" width="1375" height="904" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2979684" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27689993" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -476,38 +433,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bin/doctrine">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/doctrine-dbal">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/security-checker">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/doctrine.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32686982">
           <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/foot.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39889196">
-          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -553,20 +482,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/display_sous_typo.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/display_typo.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27423823">
-          <caret line="11" column="98" selection-start-line="11" selection-start-column="98" selection-end-line="11" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/back-base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.0">
@@ -581,13 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/display_files_typo.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="117" selection-start-line="39" selection-start-column="117" selection-end-line="39" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/search.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.024930747">
@@ -595,108 +503,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/display_files_stypo.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6509695">
-          <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bundles/orangecore/js/global.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewTypologie.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36468884">
-          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewType.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewSousTypologie.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4238227">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewFichier.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22437674">
-          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createTypologie.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15235457">
-          <caret line="26" column="82" selection-start-line="26" selection-start-column="82" selection-end-line="26" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createType.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createSousTypologie.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64819944">
-          <caret line="26" column="74" selection-start-line="26" selection-start-column="74" selection-end-line="26" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53878117">
-          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewClassification.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0">
-          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.074074">
-          <caret line="36" column="138" selection-start-line="36" selection-start-column="138" selection-end-line="36" selection-end-column="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14958449">
-          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Entity/Typologie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.22437674">
-          <caret line="33" column="63" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Entity/SousTypologie.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12465374">
           <caret line="47" column="39" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -704,6 +515,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49861497">
           <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -719,38 +531,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47368422">
           <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bundles/orangecore/css/starter-template.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6666667">
-          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0">
-          <caret line="18" column="120" selection-start-line="18" selection-start-column="120" selection-end-line="18" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Controller/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="70" column="26" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
-          <folding>
-            <marker date="1474289459729" expanded="true" signature="3299:3392" placeholder="SELECT f, t OrangeHomeBundle" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Form/TypologieType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49861497">
-          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -803,53 +583,257 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createClassification.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.407408">
-          <caret line="37" column="66" selection-start-line="37" selection-start-column="66" selection-end-line="37" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Entity/Fichier.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.62963">
-          <caret line="235" column="17" selection-start-line="235" selection-start-column="17" selection-end-line="235" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/CoreBundle/Service/SearchEngine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+          <folding>
+            <marker date="1474554539762" expanded="true" signature="1479:1566" placeholder="SELECT f, t OrangeHomeBundle" />
+            <marker date="1474554539762" expanded="true" signature="1743:1834" placeholder="SELECT ty, f... OrangeHomeBundle" />
+            <marker date="1474554539762" expanded="true" signature="1897:2019" placeholder="SELECT ty, f... OrangeHomeBundle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/display_sous_typo.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17451523">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/display_files_stypo.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33285093">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Controller/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-59.333332">
+          <caret line="95" column="49" selection-start-line="95" selection-start-column="49" selection-end-line="95" selection-end-column="49" />
+          <folding>
+            <marker date="1474289459729" expanded="true" signature="3299:3392" placeholder="SELECT f, t OrangeHomeBundle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Entity/Typologie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27423823">
+          <caret line="143" column="83" selection-start-line="143" selection-start-column="83" selection-end-line="143" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Form/TypologieType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Orange/CoreBundle/Service/CheckFiles.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.333333">
-          <caret line="138" column="38" selection-start-line="138" selection-start-column="38" selection-end-line="138" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="133" column="38" selection-start-line="133" selection-start-column="38" selection-end-line="133" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Entity/Fichier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.198061">
+          <caret line="335" column="7" selection-start-line="335" selection-start-column="7" selection-end-line="335" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/display_typo.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.666667">
+          <caret line="22" column="95" selection-start-line="22" selection-start-column="95" selection-end-line="22" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.074074075">
+          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/foot.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34903046">
+          <caret line="14" column="93" selection-start-line="14" selection-start-column="93" selection-end-line="14" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5595568">
+          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bundles/orangecore/css/starter-template.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6551723">
+          <caret line="138" column="23" selection-start-line="138" selection-start-column="23" selection-end-line="138" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.666667">
+          <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewTypologie.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24930748">
+          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewType.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6666665">
+          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createClassification.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19944598">
+          <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createFichier.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19944598">
+          <caret line="8" column="68" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewClassification.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24930748">
+          <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewFichier.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24930748">
+          <caret line="10" column="68" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewSousTypologie.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24930748">
+          <caret line="10" column="68" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createSousTypologie.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19944598">
+          <caret line="8" column="68" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createType.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19944598">
+          <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createTypologie.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19944598">
+          <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.0">
+          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/display_files_typo.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.407408">
+          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bundles/orangecore/js/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="266" column="7" selection-start-line="266" selection-start-column="7" selection-end-line="266" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Controller/BackController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.074074">
-          <caret line="430" column="54" selection-start-line="430" selection-start-column="54" selection-end-line="430" selection-end-column="54" />
-          <folding>
-            <element signature="e#48#92#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="319.92593">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createFichier.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Orange/CoreBundle/Controller/CoreController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75757575">
-          <caret line="54" column="76" selection-start-line="54" selection-start-column="76" selection-end-line="54" selection-end-column="76" />
+        <state vertical-scroll-proportion="-13.407408">
+          <caret line="100" column="63" selection-start-line="100" selection-start-column="63" selection-end-line="100" selection-end-column="63" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/releaseFichier.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.700831">
+          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+          <folding>
+            <element signature="e#2449#2477#0#HTML" expanded="true" />
+            <element signature="e#2617#2646#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

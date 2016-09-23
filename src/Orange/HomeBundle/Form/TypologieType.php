@@ -16,7 +16,6 @@ class TypologieType extends AbstractType
     {
         $builder
             ->add('libelle')
-            ->add('sublevel')
             ->add('classification', 'entity', array(
                 'class'         =>  'OrangeHomeBundle:Classification',
                 'property'      =>  'libelle',

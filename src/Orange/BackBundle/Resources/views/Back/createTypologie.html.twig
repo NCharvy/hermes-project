@@ -6,7 +6,7 @@
     <div class="container">
         <div class="starter-template">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-8 col-md-offset-1 col-lg-offset-2">
 	                <div class="panel panel-default">
 	                    <div class="panel-heading">
 	                        <h2 style="text-align : center;">{{ libelle }} de famille</h2>
@@ -28,14 +28,6 @@
 	                                {{ form_errors(form.classification) }}
 	                                <div class="col-sm-6">
 	                                    {{ form_widget(form.classification, {'attr': {'class': 'form-control'}}) }}
-	                                </div>
-	                            </div>
-
-	                            <div class="form-group">
-	                                {{ form_label(form.sublevel, "Sous-niveau", {'label_attr': {'class': 'col-sm-5 control-label'}}) }}
-	                                {{ form_errors(form.sublevel) }}
-	                                <div class="col-sm-6">
-	                                    {{ form_widget(form.sublevel, {'attr': {'class': 'form-control'}}) }}
 	                                </div>
 	                            </div>
 

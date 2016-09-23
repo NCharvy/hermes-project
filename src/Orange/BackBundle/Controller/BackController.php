@@ -366,10 +366,8 @@ class BackController extends Controller
             if(isset($sfamily) && !empty($sfamily)){
                 $file->setSousTypologie($sfamily);
             }
-            else{
-                if(isset($family) && !empty($family)){
-                    $file->setTypologie($family);
-                }
+            if(isset($family) && !empty($family)){
+                $file->setTypologie($family);
             }
 
             $file->setDate(new \DateTime());
@@ -407,10 +405,8 @@ class BackController extends Controller
             if(isset($sfamily) && !empty($sfamily)){
                 $file->setSousTypologie($sfamily);
             }
-            else{
-                if(isset($family) && !empty($family)){
-                    $file->setTypologie($family);
-                }
+            if(isset($family) && !empty($family)){
+                $file->setTypologie($family);
             }
 
             $em->persist($file);

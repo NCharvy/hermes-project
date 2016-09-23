@@ -24,7 +24,7 @@ class Typologie
     /**
      *
      * @ORM\ManyToOne(targetEntity="Orange\HomeBundle\Entity\Classification", inversedBy="typologies")
-     * @ORM\JoinColumn(referencedColumnName="id", nullable=true)
+     * @ORM\JoinColumn(referencedColumnName="id", nullable=false)
      */
     private $classification;
 
@@ -55,13 +55,6 @@ class Typologie
      * @ORM\Column(name="route", type="string", length=255)
      */
     private $route;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="sublevel", type="boolean", nullable=true)
-     */
-    private $sublevel;
 
     /**
      * Get id
@@ -142,28 +135,6 @@ class Typologie
         return $this->classification;
     }
 
-    /**
-     * Set sublevel
-     *
-     * @param boolean $sublevel
-     * @return Typologie
-     */
-    public function setSublevel($sublevel)
-    {
-        $this->sublevel = $sublevel;
-
-        return $this;
-    }
-
-    /**
-     * Get sublevel
-     *
-     * @return boolean 
-     */
-    public function getSublevel()
-    {
-        return $this->sublevel;
-    }
     /**
      * Constructor
      */

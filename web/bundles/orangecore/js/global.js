@@ -3,22 +3,26 @@
  */
 
 $(document).ready(function() {
-    var $class = $('.main-classification');
-    $class.each(function(){
-        console.log($(this).innerHeight());
-        if($(this).innerHeight() >= 258){
-            var $button = $('<button></button>');
-            var $contParent = $('#' + this.id).parent();
-            var $container = $('#' + $contParent.attr('id') + ' .button-develop');
+    if("matchMedia" in window) {
+        if (window.matchMedia("(min-width : 992px)").matches) {
+            var $class = $('.main-classification');
+            $class.each(function () {
+                console.log($(this).innerHeight());
+                if ($(this).innerHeight() >= 258) {
+                    var $button = $('<button></button>');
+                    var $contParent = $('#' + this.id).parent();
+                    var $container = $('#' + $contParent.attr('id') + ' .button-develop');
 
-            $button.html('Suite').attr({
-                onclick : "developClass('" + this.id + "')",
-                class : "dev btn btn-default"
+                    $button.html('Suite').attr({
+                        onclick: "developClass('" + this.id + "')",
+                        class: "dev btn btn-default"
+                    });
+                    $container.append($button);
+                    console.log($button.html());
+                }
             });
-            $container.append($button);
-            console.log($button.html());
         }
-    });
+    }
 
     $('#search-engine').on('submit', function(e){
         e.preventDefault();
@@ -226,32 +230,36 @@ function loadSubFamilies(fam) {
     });
 }
 
-function loadCreatedArchive() {
+function loadCreatedArchive(del = null){
+    if (del != null){
+        del = 1;
+    }
     $.ajax({
         type: "POST",
         url: '/api/load_created_archive',
+        data : '{"del" : ' + del + '}',
         async: true,
         dataType: "json",
-        beforeSend: function(){
-            $load = $('<img />');
-            $load.attr({src : '/uploads/visuels/load.gif'});
-            $('#zip').append($load);
-        },
         success: function (response) {
             $cont = $('#zip');
-            if($('#dl-archive').length > 0){
+            if ($('#dl-archive').length > 0) {
                 $('#dl-archive').remove();
             }
 
-            if(response.data.length > 0){
+            if (response.data.length > 0) {
                 archive = response.data;
 
                 $link = $('<a></a>');
-                $link.attr({href : '/uploads/zip/' + archive, id : 'dl-archive', target : '_blank'}).html('Télécharger la sauvegarde');
+                $link.attr({
+                    href: '/uploads/zip/' + archive,
+                    id: 'dl-archive',
+                    target: '_blank'
+                }).html('Télécharger la sauvegarde');
                 $cont.append($link);
 
                 console.log(archive);
             }
+            $('.modal').modal('hide');
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
             console.log(XMLHttpRequest + " " + textStatus + " " + errorThrown);

@@ -130,6 +130,8 @@ class CheckFiles
     public function moveFile(Fichier $file, EntityManager $em)
     {
         $file->setArchivage(true);
+        $file->setTypologie(null);
+        $file->setSoustypologie(null);
 
         $name = $file->getLien();
 
@@ -149,7 +151,7 @@ class CheckFiles
     }
 
     /**
-    * Partie extensions de fichiers
+    * Partie extensions de fichiers (obsolète mais conservée)
     */
 
     public function attributeExtension(Fichier $file, EntityManager $em){
@@ -173,9 +175,8 @@ class CheckFiles
             $em->flush();
         }
 
-        $file->setExtension($extFile);
-
         $extFile = $em->getRepository('OrangeHomeBundle:Extension')->findOneBy(array('nom' => $ext));
+        $file->setExtension($extFile);
 
         return $extFile;
     }

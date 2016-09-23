@@ -158,7 +158,7 @@ class Fichier
      * @param \Orange\HomeBundle\Entity\SousTypologie $soustypologie
      * @return Fichier
      */
-    public function setSoustypologie(\Orange\HomeBundle\Entity\SousTypologie $soustypologie)
+    public function setSoustypologie(\Orange\HomeBundle\Entity\SousTypologie $soustypologie = null)
     {
         $this->soustypologie = $soustypologie;
 
