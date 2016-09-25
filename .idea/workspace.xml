@@ -2,34 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfcf50a4-9506-4463-9319-2bbb96da5782" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/archives/document/CHARVY_candidature_emploi_LP_2015.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/archives/document/programme-42.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/archives/image/bhW5KUg (copie).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/archives/image/bhW5KUg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/archives/image/mockup_admin.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Controller/BackController.php" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Controller/BackController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createClassification.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createClassification.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createFichier.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createFichier.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createSousTypologie.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createSousTypologie.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createType.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createType.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createTypologie.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/createTypologie.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/index.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/releaseFichier.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/releaseFichier.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewClassification.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewClassification.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewFichier.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewFichier.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewSousTypologie.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewSousTypologie.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewType.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewType.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewTypologie.html.twig" afterPath="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/viewTypologie.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/CoreBundle/Controller/CoreController.php" afterPath="$PROJECT_DIR$/src/Orange/CoreBundle/Controller/CoreController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/foot.html.twig" afterPath="$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/foot.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/CoreBundle/Service/CheckFiles.php" afterPath="$PROJECT_DIR$/src/Orange/CoreBundle/Service/CheckFiles.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/CoreBundle/Service/SearchEngine.php" afterPath="$PROJECT_DIR$/src/Orange/CoreBundle/Service/SearchEngine.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/HomeBundle/Entity/Fichier.php" afterPath="$PROJECT_DIR$/src/Orange/HomeBundle/Entity/Fichier.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/HomeBundle/Entity/Typologie.php" afterPath="$PROJECT_DIR$/src/Orange/HomeBundle/Entity/Typologie.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/HomeBundle/Form/TypologieType.php" afterPath="$PROJECT_DIR$/src/Orange/HomeBundle/Form/TypologieType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/index.html.twig" afterPath="$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/bundles/orangecore/js/global.js" afterPath="$PROJECT_DIR$/web/bundles/orangecore/js/global.js" />
     </list>
     <ignored path="projet_hermes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,15 +45,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="releaseFichier.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="releaseFichier.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/releaseFichier.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.700831">
-              <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+            <state vertical-scroll-proportion="-18.074074">
+              <caret line="33" column="82" selection-start-line="33" selection-start-column="82" selection-end-line="33" selection-end-column="82" />
               <folding>
                 <element signature="e#2449#2477#0#HTML" expanded="true" />
                 <element signature="e#2617#2646#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.09612817">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,7 +116,6 @@
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/web/bundles/orangecore/css/starter.css" />
         <option value="$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/login-base.html.twig" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Orange/CoreBundle/Resources/views/back-base.html.twig" />
         <option value="$PROJECT_DIR$/src/Orange/SecurityBundle/Resources/views/Security/login.html.twig" />
         <option value="$PROJECT_DIR$/src/Orange/HomeBundle/Resources/views/Home/display_files_stypo.html.twig" />
@@ -169,6 +152,7 @@
         <option value="$PROJECT_DIR$/web/bundles/orangecore/js/global.js" />
         <option value="$PROJECT_DIR$/src/Orange/CoreBundle/Controller/CoreController.php" />
         <option value="$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/releaseFichier.html.twig" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -375,7 +359,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1375" height="904" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27689993" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -580,13 +564,6 @@
         <state vertical-scroll-proportion="0.4238227">
           <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -828,12 +805,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Orange/BackBundle/Resources/views/Back/releaseFichier.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.700831">
-          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        <state vertical-scroll-proportion="-18.074074">
+          <caret line="33" column="82" selection-start-line="33" selection-start-column="82" selection-end-line="33" selection-end-column="82" />
           <folding>
             <element signature="e#2449#2477#0#HTML" expanded="true" />
             <element signature="e#2617#2646#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09612817">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
