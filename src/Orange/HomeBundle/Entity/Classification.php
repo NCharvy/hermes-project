@@ -220,7 +220,7 @@ class Classification
             return;
         }
 
-        $this->lien = $this->image->getClientOriginalName();
+        $this->visuel = $this->image->getClientOriginalName();
     }
 
     /**
@@ -229,6 +229,8 @@ class Classification
      */
     public function upload()
     {
+        $add = $this->visuel;
+
         if(null === $this->image){
             return;
         }
@@ -240,9 +242,14 @@ class Classification
             }
         }
 
+        if(file_exists($this->getUploadRootDir() . '/' . $this->visuel)){
+            $ch = explode(".", $this->lien);
+            $add = $ch[0] . " (copie)." . $ch[1];
+        }
+
         $this->image->move(
             $this->getUploadRootDir(),
-            $this->visuel
+            $add
         );
     }
 

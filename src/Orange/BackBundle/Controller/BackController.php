@@ -92,6 +92,11 @@ class BackController extends Controller
 
         if($form->handleRequest($req)->isValid()){
             $em = $this->getDoctrine()->getManager();
+            $route = str_replace(' ', '_', $class->getLibelle());
+            $route = str_replace('\'', '_', $route);
+            $route = htmlentities(strtolower($route));
+            $route = preg_replace('/&(.)[^;]+;/', '$1', $route);
+            $class->setRoute($route);
             $em->persist($class);
             $em->flush();
 

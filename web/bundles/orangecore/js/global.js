@@ -3,7 +3,7 @@
  */
 
 $(document).ready(function() {
-    if("matchMedia" in window) {
+    /*if("matchMedia" in window) {
         if (window.matchMedia("(min-width : 992px)").matches) {
             var $class = $('.main-classification');
             $class.each(function () {
@@ -22,7 +22,7 @@ $(document).ready(function() {
                 }
             });
         }
-    }
+    }*/
 
     $('#search-engine').on('submit', function(e){
         e.preventDefault();
