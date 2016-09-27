@@ -20,7 +20,7 @@
                         <div class="panel-body">
                             <form method="post" action="" id="search-engine" onSubmit="loadCustomSearch();">
                                 <label for="engsearch">Mots-clés : </label><input type="text" id="engsearch" name="engsearch" value="{{ search }}" />
-                                <select name="thema" id="thema">
+                                <select name="thema" id="thema" onChange="loadFamilies(this.value)">
                                     <option selected value="">-- Sélectionner la thématique --</option>
                                     {% for t in thema %}
                                         <option value="{{ t.id }}">{{ t.libelle }}</option>
@@ -29,7 +29,7 @@
                                 <select name="fam" id="fam" onChange="loadSubFamilies(this.value);">
                                     <option selected="selected" value="">-- Sélectionner la famille --</option>
                                     {% for f in fam %}
-                                        <option value="{{ f.id }}">{{ f.libelle }}</option>
+                                        <option value="{{ f.id }}" class="new">{{ f.libelle }}</option>
                                     {% endfor %}
                                 </select>
                                 <select name="sfam" id="sfam">

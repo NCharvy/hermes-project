@@ -203,6 +203,33 @@ function loadCustomSearch(form){
     });
 }
 
+function loadFamilies(thema) {
+    $.ajax({
+        type: "POST",
+        url: '/api/load_families',
+        data: '{"idthema": ' + thema + '}',
+        async: true,
+        dataType: "json",
+        success: function (response) {
+            var data_cat = [];
+            var $cat = $('#fam');
+            if(response.data.length > 0){
+                fam = response.data;
+            }
+            if($('.new').length > 0){
+                $('.new').remove();
+            }
+            $.each(fam, function(key, value){
+                var $c = $('<option class="new" value="'+ fam[key].id +'">' + fam[key].libelle + '</option>');
+                $cat.append($c);
+            });
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            console.log(XMLHttpRequest + " " + textStatus + " " + errorThrown);
+        },
+    });
+}
+
 function loadSubFamilies(fam) {
     $.ajax({
         type: "POST",

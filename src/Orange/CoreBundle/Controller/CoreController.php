@@ -68,6 +68,28 @@ class CoreController extends Controller
     }
 
     /**
+     * @Route("/api/load_families")
+     */
+    public function loadFamiliesAction(Request $request)
+    {
+        if($request->getMethod() == 'POST')
+        {
+            $id = json_decode($request->getContent());
+            $em = $this->getDoctrine()->getManager();
+
+            $fam = $em->createQueryBuilder()
+                ->select('f')
+                ->from('OrangeHomeBundle:Typologie', 'f')
+                ->innerJoin('f.classification', 'c')
+                ->where('c.id = ' . $id->idthema)
+                ->getQuery()
+                ->getArrayResult();
+
+            return new Response(json_encode(array("data" => $fam)));
+        }
+    }
+
+    /**
      * @Route("/api/load_created_archive")
      */
     public function loadCreatedArchiveAction(Request $request)
