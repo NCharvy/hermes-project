@@ -21,12 +21,12 @@ class SearchEngine
             }
         }
         if(!empty($fam)){
-            $join .= "JOIN f.typologie fa";
+            $join .= "JOIN f.typologie fa ";
             if(!empty($add)){
-                $add .= " AND fa.id = $fam AND fam.id = $fam";
+                $add .= " AND fa.id = $fam";
             }
             else{
-                $add .= "fa.id = $fam AND fam.id = $fam";
+                $add .= "fa.id = $fam";
             }
         }
         if(!empty($thema)){

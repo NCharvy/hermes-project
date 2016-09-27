@@ -73,7 +73,7 @@ class BackController extends Controller
         $class = $em->getRepository('OrangeHomeBundle:Classification')->findAll();
 
         return array(
-            'class' => $class
+            'class' => $class,
         );    }
 
     /**
@@ -454,11 +454,16 @@ class BackController extends Controller
     public function viewTypeAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $type = $em->getRepository('OrangeHomeBundle:Type')->findAll();
-
+        //$type = $em->getRepository('OrangeHomeBundle:Type')->findAll();
+        $type = $em->getRepository('OrangeHomeBundle:Type')
+                    ->createQueryBuilder('t')
+                    ->select('t')
+                    ->getQuery()
+                    ->getResult();
         return array(
             'type' => $type
-        );    }
+        );
+    }
 
     /**
      * @Route("/back/type/create", name="_type_create")
