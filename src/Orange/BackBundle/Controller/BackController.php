@@ -454,14 +454,10 @@ class BackController extends Controller
     public function viewTypeAction()
     {
         $em = $this->getDoctrine()->getManager();
-        //$type = $em->getRepository('OrangeHomeBundle:Type')->findAll();
-        $type = $em->getRepository('OrangeHomeBundle:Type')
-                    ->createQueryBuilder('t')
-                    ->select('t')
-                    ->getQuery()
-                    ->getResult();
+        $ty = $em->getRepository('OrangeHomeBundle:Type')->findAll();
+
         return array(
-            'type' => $type
+            'ty' => $ty
         );
     }
 
