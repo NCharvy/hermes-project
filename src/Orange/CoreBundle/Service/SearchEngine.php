@@ -54,16 +54,16 @@ class SearchEngine
         }
 
         if(!empty($type)){
-            $dql = "SELECT f, t FROM OrangeHomeBundle:Fichier f $join WHERE $add AND f.nom LIKE '%$search%'";
+            $dql = "SELECT f, t FROM OrangeHomeBundle:Fichier f $join WHERE $add AND f.nom LIKE '%$search%' AND f.archivage = false";
         }
         else{
             if(empty($thema) && empty($fam) && empty($sfam))
             {
-                $add .= " f.nom LIKE '%$search%'";
+                $add .= " f.nom LIKE '%$search%' AND f.archivage = false";
                 $dql = "SELECT ty, f, t FROM OrangeHomeBundle:Type ty JOIN ty.fichiers f JOIN f.type t $join WHERE $add";
             }
             else{
-                $dql = "SELECT ty, f, t FROM OrangeHomeBundle:Type ty JOIN ty.fichiers f JOIN f.type t $join WHERE $add AND f.nom LIKE '%$search%'";
+                $dql = "SELECT ty, f, t FROM OrangeHomeBundle:Type ty JOIN ty.fichiers f JOIN f.type t $join WHERE $add AND f.nom LIKE '%$search%' AND f.archivage = false";
             }
         }
         $file = $em->createQuery($dql);

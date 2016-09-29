@@ -132,12 +132,15 @@ function loadCustomSearch(form){
                         var $nameFile = $('<h3></h3>');
                         $nameFile.html(file.nom);
                         if(file.type.libelle == 'Image'){
+                            var idModal = 'a-click-' + i;
+                            var $aModal = $('<a id="' + idModal + '" class="click-image" data-toggle="modal" data-target="#show-image" href="" onclick="showModal(this.id);"></a>');
                             var $img = $('<img />');
-                            $img.attr({src : "uploads/resources/" + file.type.route + "/" + file.lien, width : 150, alt : file.nom});
+                            $img.attr({src : "uploads/resources/" + file.type.route + "/" + file.lien, width : 200, alt : file.nom});
+                            $aModal.append($img);
                         }
                         else if(file.type.libelle == 'Document'){
                             var $pdf = $('<iframe></iframe>');
-                            $pdf.attr({src : "uploads/resources/" + file.type.route + "/" + file.lien, width : 150});
+                            $pdf.attr({src : "uploads/resources/" + file.type.route + "/" + file.lien, width : 200});
                         }
                         var $typeDetail = $('<p></p>');
                         $typeDetail.attr({css: 'color : #222 !important;'}).html("Type : " + file.type.libelle);
@@ -148,7 +151,7 @@ function loadCustomSearch(form){
                         $fileCont.append($fileDiv);
                         $fileDiv.append($nameFile);
                         if($img !== undefined){
-                            $fileDiv.append($img);
+                            $fileDiv.append($aModal);
                         }
                         else if($pdf !== undefined){
                             $fileDiv.append($pdf);
@@ -165,21 +168,24 @@ function loadCustomSearch(form){
 
                     i++;
                     var $fileCont = $('<div></div>');
-                    $fileCont.attr({class: 'col-md-6 file-cont'});
+                    $fileCont.attr({class: 'col-md-6 file-cont cont-spe'});
                     var $fileDiv = $('<div></div>');
                     $fileDiv.attr({class: 'panel panel-default col-md-10 file-div'});
                     var $nameFile = $('<h3></h3>');
                     $nameFile.html(elem.nom);
                     if(elem.type.libelle == 'Image'){
+                        var idModal = 'a-click-' + i;
+                        var $aModal = $('<a id="' + idModal + '" class="click-image" data-toggle="modal" data-target="#show-image" href="" onclick="showModal(this.id);"></a>');
                         var $img = $('<img />');
-                        $img.attr({src : "uploads/resources/" + elem.type.route + "/" + elem.lien, width : 150, alt : elem.nom});
+                        $img.attr({src : "uploads/resources/" + elem.type.route + "/" + elem.lien, width : 200, alt : elem.nom});
+                        $aModal.append($img);
                     }
                     else if(elem.type.libelle == 'Document'){
                         var $pdf = $('<iframe></iframe>');
-                        $pdf.attr({src : "uploads/resources/" + elem.type.route + "/" + elem.lien, width : 150});
+                        $pdf.attr({src : "uploads/resources/" + elem.type.route + "/" + elem.lien, width : 200});
                     }
                     var $typeDetail = $('<p></p>');
-                    $typeDetail.attr({css: 'color : #222 !important;'}).html("Type : " + elem.type.libelle);
+                    $typeDetail.attr({style: 'color : #222 !important;'}).html("Type : " + elem.type.libelle);
                     var $dlLink = $('<a></a>');
                     $dlLink.attr({href : "uploads/resources/" + elem.type.route + "/" + elem.lien, target : "_blank"}).html("Télécharger");
 
@@ -187,7 +193,7 @@ function loadCustomSearch(form){
                     $fileCont.append($fileDiv);
                     $fileDiv.append($nameFile);
                     if($img !== undefined){
-                        $fileDiv.append($img);
+                        $fileDiv.append($aModal);
                     }
                     else if($pdf !== undefined){
                         $fileDiv.append($pdf);

@@ -156,6 +156,9 @@ input:-moz-placeholder{
   .header-classification{
     padding-top : 150px;
   }
+  .cont-spe{
+    margin-top : 56px;
+  }
 }
 
 @media screen and (min-width : 1200px){
