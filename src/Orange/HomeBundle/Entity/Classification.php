@@ -62,7 +62,7 @@ class Classification
     private $visuel;
 
     /**
-     * @ORM\OneToMany(targetEntity="Orange\HomeBundle\Entity\Typologie", mappedBy="classification")
+     * @ORM\OneToMany(targetEntity="Orange\HomeBundle\Entity\Typologie", mappedBy="classification", orphanRemoval=true)
      * @ORM\JoinColumn(referencedColumnName="id", nullable=true)
      */
     private $typologies;

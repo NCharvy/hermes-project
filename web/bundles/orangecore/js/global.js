@@ -286,7 +286,8 @@ function loadCreatedArchive(del = null){
                 $link.attr({
                     href: '/uploads/zip/' + archive,
                     id: 'dl-archive',
-                    target: '_blank'
+                    target: '_blank',
+                    style: 'display : block;'
                 }).html('Télécharger la sauvegarde');
                 $cont.append($link);
 

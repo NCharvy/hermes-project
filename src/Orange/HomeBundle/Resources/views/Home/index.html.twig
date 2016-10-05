@@ -50,18 +50,16 @@
     <script type="text/javascript">
         jQuery(document).ready(function(){
             var $numChildren = $('#cont-slider').children().length;
-            if("matchMedia" in window){
-                if(window.matchMedia("(min-width : 1200px)").matches){
-                    if($numChildren > 0){
+            if($numChildren > 0) {
+                if ("matchMedia" in window) {
+                    if (window.matchMedia("(min-width : 1200px)").matches) {
                         jQuery('.slider1').bxSlider({
-                            slideWidth : 390,
-                            minSlides : 1,
-                            maxSlides : 3
+                            slideWidth: 390,
+                            minSlides: 1,
+                            maxSlides: 3
                         });
                     }
-                }
-                else if(window.matchMedia("(min-width : 992px)").matches){
-                    if($numChildren > 0) {
+                    else if (window.matchMedia("(min-width : 992px)").matches) {
                         jQuery('.slider1').bxSlider({
                             slideWidth: 322,
                             minSlides: 1,
