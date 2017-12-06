@@ -1,4 +1,4 @@
-projet_hermes
+hermes project
 =============
 
-A Symfony project created on June 1, 2016, 7:36 pm.
+Projet de bibliothèque de supports numérique pour Orange, réalisé au cours de l'été 2016
